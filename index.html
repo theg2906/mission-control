@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Control - theg2906</title>
-    <!-- 使用 CDN 連結確保資源獲取成功 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rdsthomas/mission-control@main/css/styles.css">
     <script>
-        // 強制鎖定儲存庫路徑與分支，這段腳本會先於 app.js 執行
+        // Force the dashboard to use the correct GitHub repo and branch
+        // This script runs before the app logic to ensure settings are locked
         localStorage.setItem('gh-repo', 'theg2906/mission-control');
         localStorage.setItem('gh-branch', 'master');
         console.log("Mission Control: Configuration locked to theg2906/mission-control [master]");
     </script>
 </head>
 <body>
-    <!-- Mission Control Dashboard DOM 結構 -->
     <div id="login-screen" class="login-screen">
         <div class="login-container">
-            <h1>🎯 Mission Control</h1>
+            <div class="login-logo">🎯</div>
+            <h1 class="login-title">Mission Control</h1>
+            <p class="login-subtitle">Task & Project Management Dashboard</p>
             <div class="login-card">
                 <h2>🔐 Login Required</h2>
                 <div class="login-form">
-                    <input type="password" id="login-token-input" class="login-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                    <input type="password" id="login-token-input" class="login-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
                     <button id="login-btn" class="login-btn" onclick="handleLogin()">Connect with GitHub</button>
                 </div>
             </div>
@@ -43,16 +44,27 @@
         </header>
         <main class="main">
             <div class="kanban">
-                <!-- 欄位將由 JS 自動生成 -->
-                <div class="column" id="col-backlog"></div>
-                <div class="column" id="col-in_progress"></div>
-                <div class="column" id="col-review"></div>
-                <div class="column" id="col-done"></div>
+                <div class="column" id="col-backlog">
+                    <div class="column-header">📋 Backlog <span class="column-count" id="count-backlog">0</span></div>
+                    <div class="column-tasks" id="tasks-backlog"></div>
+                </div>
+                <div class="column" id="col-in_progress">
+                    <div class="column-header">🚀 In Progress <span class="column-count" id="count-in_progress">0</span></div>
+                    <div class="column-tasks" id="tasks-in_progress"></div>
+                </div>
+                <div class="column" id="col-review">
+                    <div class="column-header">👀 Review <span class="column-count" id="count-review">0</span></div>
+                    <div class="column-tasks" id="tasks-review"></div>
+                </div>
+                <div class="column" id="col-done">
+                    <div class="column-header">✅ Done <span class="column-count" id="count-done">0</span></div>
+                    <div class="column-tasks" id="tasks-done"></div>
+                </div>
             </div>
         </main>
     </div>
 
-    <!-- 引用核心邏輯 -->
+    <!-- Core App Logic from CDN -->
     <script src="https://cdn.jsdelivr.net/gh/rdsthomas/mission-control@main/js/main.js"></script>
 </body>
 </html>
