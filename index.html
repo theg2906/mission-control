@@ -4,16 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Control - theg2906</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- 使用 CDN 連結確保資源獲取成功 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rdsthomas/mission-control@main/css/styles.css">
     <script>
-        // 預先設定 GitHub 資訊
+        // 強制鎖定儲存庫路徑與分支，這段腳本會先於 app.js 執行
         localStorage.setItem('gh-repo', 'theg2906/mission-control');
         localStorage.setItem('gh-branch', 'master');
-        console.log("Mission Control Path: theg2906/mission-control [master]");
+        console.log("Mission Control: Configuration locked to theg2906/mission-control [master]");
     </script>
 </head>
 <body>
-    <div id="dashboard-root"></div>
-    <script src="js/app.js"></script>
+    <!-- Mission Control Dashboard DOM 結構 -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <h1>🎯 Mission Control</h1>
+            <div class="login-card">
+                <h2>🔐 Login Required</h2>
+                <div class="login-form">
+                    <input type="password" id="login-token-input" class="login-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                    <button id="login-btn" class="login-btn" onclick="handleLogin()">Connect with GitHub</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="dashboard" style="display: none;">
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">🎯 Mission Control</div>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-github" id="btn-connect">Connect GitHub</button>
+                <div class="user-profile" id="user-profile" style="display: none;">
+                    <img class="user-avatar" id="user-avatar" src="">
+                    <span class="user-name" id="user-name"></span>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="kanban">
+                <!-- 欄位將由 JS 自動生成 -->
+                <div class="column" id="col-backlog"></div>
+                <div class="column" id="col-in_progress"></div>
+                <div class="column" id="col-review"></div>
+                <div class="column" id="col-done"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 引用核心邏輯 -->
+    <script src="https://cdn.jsdelivr.net/gh/rdsthomas/mission-control@main/js/main.js"></script>
 </body>
 </html>
