@@ -1,0 +1,11 @@
+[
+  {
+    "id": "task_001",
+    "title": "Welcome to Mission Control",
+    "description": "Your Kanban board is being initialized.",
+    "status": "backlog",
+    "subtasks": [],
+    "priority": "low",
+    "comments": []
+  }
+]
