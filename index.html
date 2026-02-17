@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Control - MoltBot</title>
     <link rel="stylesheet" href="css/styles.css">
-</head>
+<script>localStorage.setItem('gh-repo', 'theg2906/mission-control'); localStorage.setItem('gh-branch', 'master');</script></head>
 <body>
     <!-- Login Required Screen (shown when not authenticated) -->
     <div id="login-screen" class="login-screen">
         <div class="login-container">
-            <div class="login-logo">üéØ</div>
+            <div class="login-logo">?éØ</div>
             <h1 class="login-title">Mission Control</h1>
             <p class="login-subtitle">Task & Project Management Dashboard</p>
 
             <div class="login-card">
-                <h2>üîê Login Required</h2>
+                <h2>?? Login Required</h2>
                 <p>Connect your GitHub account to access the dashboard.</p>
 
                 <div class="login-steps">
@@ -24,8 +24,7 @@
                         <div>
                             <strong>Create a Personal Access Token</strong>
                             <a href="https://github.com/settings/tokens/new?scopes=repo&description=Mission%20Control%20Dashboard" target="_blank" class="login-link">
-                                Create token on GitHub ‚Üí
-                            </a>
+                                Create token on GitHub ??                            </a>
                         </div>
                     </div>
                     <div class="login-step">
@@ -59,7 +58,7 @@
                     </div>
                 </div>
 
-                <p class="login-security">üîí Your token is stored locally and never sent anywhere except GitHub.</p>
+                <p class="login-security">?? Your token is stored locally and never sent anywhere except GitHub.</p>
             </div>
         </div>
     </div>
@@ -70,7 +69,7 @@
     <header class="header">
         <div class="header-left">
             <div class="logo">
-                <span>üéØ</span>
+                <span>?éØ</span>
                 <span>Mission Control</span>
             </div>
             <nav class="nav-tabs">
@@ -94,18 +93,18 @@
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="M21 21l-4.35-4.35"></path>
                     </svg>
-                    <button class="search-clear" onmousedown="event.preventDefault()" onclick="clearSearch()" title="Clear search">√ó</button>
+                    <button class="search-clear" onmousedown="event.preventDefault()" onclick="clearSearch()" title="Clear search">?</button>
                 </div>
                 <span class="search-info" id="search-info"></span>
                 <label class="archive-search-toggle" title="Include archived tasks in search">
                     <input type="checkbox" id="search-include-archived" onchange="toggleArchiveSearch(this.checked)">
-                    <span>üì¶ Archive</span>
+                    <span>?ì¶ Archive</span>
                 </label>
             </div>
         </div>
         <div class="header-right">
             <span class="live-indicator live" id="live-indicator">Live</span>
-            <button class="btn btn-secondary" onclick="pollForUpdates(); window.location.reload()">‚Üª Refresh</button>
+            <button class="btn btn-secondary" onclick="pollForUpdates(); window.location.reload()">??Refresh</button>
 
             <!-- Not Logged In -->
             <button class="btn btn-github" id="btn-connect" onclick="showAuthModal()">
@@ -119,7 +118,7 @@
             <div class="user-profile" id="user-profile" style="display: none;">
                 <img class="user-avatar" id="user-avatar" src="" alt="Avatar">
                 <span class="user-name" id="user-name"></span>
-                <button class="btn-icon" onclick="showSettingsModal()" title="Settings">‚öôÔ∏è</button>
+                <button class="btn-icon" onclick="showSettingsModal()" title="Settings">?ôÔ?</button>
                 <span class="user-logout" onclick="logout()">Logout</span>
             </div>
         </div>
@@ -127,7 +126,7 @@
 
     <!-- Unsaved Changes Banner -->
     <div class="unsaved-banner" id="unsaved-banner">
-        <span class="unsaved-text">‚ö†Ô∏è You have unsaved changes</span>
+        <span class="unsaved-text">?†Ô? You have unsaved changes</span>
         <div>
             <button class="btn btn-secondary btn-small" onclick="discardChanges()">Discard</button>
             <button class="btn btn-primary btn-small" onclick="showCommitModal()">Save & Commit</button>
@@ -165,7 +164,7 @@
             <div class="column column-templates">
                 <div class="column-header">
                     <div class="column-dot templates"></div>
-                    <span class="column-title">üìë Templates</span>
+                    <span class="column-title">?? Templates</span>
                     <span class="column-count" id="count-templates">0</span>
                     <span class="column-add" onclick="openNewTemplate()" title="Add new template">+</span>
                 </div>
@@ -184,7 +183,7 @@
             <div class="column column-scheduled">
                 <div class="column-header">
                     <div class="column-dot scheduled"></div>
-                    <span class="column-title">üìÖ Scheduled</span>
+                    <span class="column-title">?? Scheduled</span>
                     <span class="column-count" id="count-scheduled">0</span>
                     <span class="column-add" onclick="openScheduledTaskModal()" title="Schedule a task">+</span>
                 </div>
@@ -226,8 +225,8 @@
                     <div class="column-dot done"></div>
                     <span class="column-title">Done</span>
                     <span class="column-count" id="count-done">0</span>
-                    <button class="archive-all-btn" onclick="showArchiveView()" title="View archived tasks" style="background: transparent;">üìÇ View</button>
-                    <button class="archive-all-btn" onclick="archiveAllDone()" title="Archive all done tasks">üì¶ Archive All</button>
+                    <button class="archive-all-btn" onclick="showArchiveView()" title="View archived tasks" style="background: transparent;">?? View</button>
+                    <button class="archive-all-btn" onclick="archiveAllDone()" title="Archive all done tasks">?ì¶ Archive All</button>
                 </div>
                 <div class="column-tasks" id="tasks-done" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'done')"></div>
             </div>
@@ -237,7 +236,7 @@
             <div class="activity-header">
                 <span>ACTIVITY</span>
                 <button class="activity-toggle" onclick="toggleActivity()" title="Hide Activity">
-                    <span id="activity-toggle-icon">‚úï</span>
+                    <span id="activity-toggle-icon">??/span>
                 </button>
             </div>
             <div class="activity-list" id="activity-list"></div>
@@ -269,9 +268,9 @@
                     </div>
                 </div>
                 <div class="skills-header-actions">
-                    <button class="btn btn-secondary" onclick="refreshSkills()">‚Üª Refresh</button>
+                    <button class="btn btn-secondary" onclick="refreshSkills()">??Refresh</button>
                     <button class="btn btn-clawdhub" onclick="openClawdHub()">
-                        üß© Browse ClawdHub
+                        ?ß© Browse ClawdHub
                     </button>
                 </div>
             </div>
@@ -280,12 +279,12 @@
             <div class="skills-filters">
                 <div class="skills-filter-chips">
                     <button class="skills-filter-chip active" data-filter="all" onclick="resetSkillFilters()">All</button>
-                    <button class="skills-filter-chip" data-filter="enabled" onclick="toggleSkillFilter('enabled')">‚úÖ Enabled</button>
-                    <button class="skills-filter-chip" data-filter="disabled" onclick="toggleSkillFilter('disabled')">‚è∏Ô∏è Disabled</button>
-                    <button class="skills-filter-chip" data-filter="ready" onclick="toggleSkillFilter('ready')">üü¢ Ready</button>
-                    <button class="skills-filter-chip" data-filter="needs-setup" onclick="toggleSkillFilter('needs-setup')">üü° Needs Setup</button>
-                    <button class="skills-filter-chip" data-filter="builtin" onclick="toggleSkillFilter('builtin')">üì¶ Built-in</button>
-                    <button class="skills-filter-chip" data-filter="workspace" onclick="toggleSkillFilter('workspace')">üè† Workspace</button>
+                    <button class="skills-filter-chip" data-filter="enabled" onclick="toggleSkillFilter('enabled')">??Enabled</button>
+                    <button class="skills-filter-chip" data-filter="disabled" onclick="toggleSkillFilter('disabled')">?∏Ô? Disabled</button>
+                    <button class="skills-filter-chip" data-filter="ready" onclick="toggleSkillFilter('ready')">?ü¢ Ready</button>
+                    <button class="skills-filter-chip" data-filter="needs-setup" onclick="toggleSkillFilter('needs-setup')">?ü° Needs Setup</button>
+                    <button class="skills-filter-chip" data-filter="builtin" onclick="toggleSkillFilter('builtin')">?ì¶ Built-in</button>
+                    <button class="skills-filter-chip" data-filter="workspace" onclick="toggleSkillFilter('workspace')">?? Workspace</button>
                 </div>
             </div>
 
@@ -293,7 +292,7 @@
             <div id="skills-grid-container">
                 <!-- Skills will be rendered here by JavaScript -->
                 <div class="skills-empty">
-                    <div class="skills-empty-icon">üß©</div>
+                    <div class="skills-empty-icon">?ß©</div>
                     <div class="skills-empty-title">Loading skills...</div>
                     <div class="skills-empty-text">Please wait while we load your skills.</div>
                 </div>
@@ -309,7 +308,7 @@
                 <div class="brain-explorer-header">
                     <div class="brain-explorer-title">Memory Files</div>
                     <div class="brain-search">
-                        <span class="brain-search-icon">üîç</span>
+                        <span class="brain-search-icon">??</span>
                         <input type="text" id="brain-search-input" placeholder="Search memory..." oninput="handleBrainSearch(this.value)">
                     </div>
                 </div>
@@ -317,7 +316,7 @@
                 <div class="brain-file-tree" id="brain-file-tree">
                     <!-- Files will be rendered by JavaScript -->
                     <div class="brain-empty">
-                        <div class="brain-empty-icon">üìÇ</div>
+                        <div class="brain-empty-icon">??</div>
                         <div class="brain-empty-title">Loading...</div>
                     </div>
                 </div>
@@ -339,33 +338,33 @@
                     </div>
                     <div class="brain-editor-actions">
                         <button class="btn btn-secondary btn-small" onclick="toggleBrainPreview()" id="brain-preview-toggle" disabled>
-                            üëÅÔ∏è Preview
+                            ??Ô∏?Preview
                         </button>
                         <button class="btn btn-secondary btn-small" onclick="openMemoryMerge()">
-                            üîÑ Merge Notes
+                            ?? Merge Notes
                         </button>
                         <button class="btn btn-primary btn-small" onclick="openKnowledgeBuilder()">
-                            üßô Add Knowledge
+                            ?? Add Knowledge
                         </button>
                     </div>
                 </div>
                 
                 <div class="brain-editor-toolbar" id="brain-editor-toolbar" style="display: none;">
-                    <button class="brain-toolbar-btn" onclick="brainInsert('**', '**')" title="Bold">ùêÅ</button>
-                    <button class="brain-toolbar-btn" onclick="brainInsert('*', '*')" title="Italic">ùêº</button>
+                    <button class="brain-toolbar-btn" onclick="brainInsert('**', '**')" title="Bold">??</button>
+                    <button class="brain-toolbar-btn" onclick="brainInsert('*', '*')" title="Italic">?êº</button>
                     <button class="brain-toolbar-btn" onclick="brainInsert('`', '`')" title="Code">&lt;/&gt;</button>
-                    <button class="brain-toolbar-btn" onclick="brainInsert('[', '](url)')" title="Link">üîó</button>
+                    <button class="brain-toolbar-btn" onclick="brainInsert('[', '](url)')" title="Link">??</button>
                     <div class="brain-toolbar-divider"></div>
-                    <button class="brain-toolbar-btn" onclick="brainInsertLine('- ')" title="List">‚Ä¢ List</button>
+                    <button class="brain-toolbar-btn" onclick="brainInsertLine('- ')" title="List">??List</button>
                     <button class="brain-toolbar-btn" onclick="brainInsertLine('## ')" title="Heading">H2</button>
                     <button class="brain-toolbar-btn" onclick="brainInsertLine('#')" title="Tag">#tag</button>
                     <div class="brain-toolbar-divider"></div>
-                    <button class="brain-toolbar-btn" onclick="brainInsertLine('---')" title="Divider">‚Äï</button>
+                    <button class="brain-toolbar-btn" onclick="brainInsertLine('---')" title="Divider">??/button>
                 </div>
                 
                 <div class="brain-editor-content" id="brain-editor-content">
                     <div class="brain-empty">
-                        <div class="brain-empty-icon">üß†</div>
+                        <div class="brain-empty-icon">??</div>
                         <div class="brain-empty-title">Your Memory, Organized</div>
                         <div class="brain-empty-text">
                             Select a file from the explorer to view and edit, or use the Knowledge Builder to add new information.
@@ -388,15 +387,14 @@
             <!-- Changelog (Right Panel) -->
             <div class="brain-changelog" id="brain-changelog">
                 <div class="brain-changelog-header">
-                    <span class="brain-changelog-title">üìú Changelog</span>
+                    <span class="brain-changelog-title">?? Changelog</span>
                     <button class="brain-changelog-toggle" onclick="toggleBrainChangelog()" title="Collapse">
-                        ‚úï
-                    </button>
+                        ??                    </button>
                 </div>
                 <div class="brain-changelog-list" id="brain-changelog-list">
                     <!-- Changelog items will be rendered by JavaScript -->
                     <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
-                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">üìú</div>
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">??</div>
                         <div>Loading history...</div>
                     </div>
                 </div>
@@ -408,8 +406,8 @@
     <div class="brain-knowledge-builder" id="brain-knowledge-builder">
         <div class="brain-kb-modal">
             <div class="brain-kb-header">
-                <span class="brain-kb-title">üßô Knowledge Builder</span>
-                <button class="brain-kb-close" onclick="closeKnowledgeBuilder()">√ó</button>
+                <span class="brain-kb-title">?? Knowledge Builder</span>
+                <button class="brain-kb-close" onclick="closeKnowledgeBuilder()">?</button>
             </div>
             <div class="brain-kb-content">
                 <label style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem; display: block;">
@@ -418,12 +416,12 @@
                 <textarea class="brain-kb-input" id="brain-kb-input" placeholder="e.g., JetBrains account uses thomas@example.com, password in 1Password. Renewal date is March 15th."></textarea>
                 
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-                    <button class="btn btn-secondary btn-small" onclick="processKnowledge('format')">üìù Format</button>
-                    <button class="btn btn-secondary btn-small" onclick="processKnowledge('extract')">üîç Extract Facts</button>
-                    <button class="btn btn-secondary btn-small" onclick="processKnowledge('tags')">üè∑Ô∏è Tags</button>
+                    <button class="btn btn-secondary btn-small" onclick="processKnowledge('format')">?? Format</button>
+                    <button class="btn btn-secondary btn-small" onclick="processKnowledge('extract')">?? Extract Facts</button>
+                    <button class="btn btn-secondary btn-small" onclick="processKnowledge('tags')">?è∑Ô∏?Tags</button>
                     <div style="width: 1px; height: 20px; background: var(--border); margin: 0 0.25rem;"></div>
-                    <button class="btn btn-primary btn-small" onclick="processKnowledge('ai')" id="brain-kb-ai-btn" title="Process with AI (requires API key)">ü§ñ AI Process</button>
-                    <button class="btn btn-secondary btn-small" onclick="showAISettings()" title="Configure AI">‚öôÔ∏è</button>
+                    <button class="btn btn-primary btn-small" onclick="processKnowledge('ai')" id="brain-kb-ai-btn" title="Process with AI (requires API key)">?? AI Process</button>
+                    <button class="btn btn-secondary btn-small" onclick="showAISettings()" title="Configure AI">?ôÔ?</button>
                 </div>
                 
                 <div class="brain-kb-result" id="brain-kb-result" style="display: none;">
@@ -436,8 +434,8 @@
                         Save to:
                     </label>
                     <select id="brain-kb-target" style="width: 100%; padding: 0.5rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary);">
-                        <option value="today">üìÖ Today's memory (memory/YYYY-MM-DD.md)</option>
-                        <option value="memory">üß† Long-term memory (MEMORY.md)</option>
+                        <option value="today">?? Today's memory (memory/YYYY-MM-DD.md)</option>
+                        <option value="memory">?? Long-term memory (MEMORY.md)</option>
                     </select>
                 </div>
             </div>
@@ -452,12 +450,12 @@
     <div class="brain-ai-settings" id="brain-ai-settings">
         <div class="brain-ai-settings-modal">
             <div class="brain-ai-settings-header">
-                <span class="brain-ai-settings-title">‚öôÔ∏è AI Settings</span>
-                <button class="brain-kb-close" onclick="hideAISettings()">√ó</button>
+                <span class="brain-ai-settings-title">?ôÔ? AI Settings</span>
+                <button class="brain-kb-close" onclick="hideAISettings()">?</button>
             </div>
             <div class="brain-ai-settings-content">
                 <div class="brain-ai-status" id="brain-ai-status">
-                    <span>üîå</span>
+                    <span>??</span>
                     <span id="brain-ai-status-text">Checking...</span>
                 </div>
                 
@@ -504,7 +502,7 @@
                     <div class="brain-diff-title" id="brain-diff-title">Commit Details</div>
                     <div class="brain-diff-meta" id="brain-diff-meta"></div>
                 </div>
-                <button class="brain-diff-close" onclick="closeDiffModal()">√ó</button>
+                <button class="brain-diff-close" onclick="closeDiffModal()">?</button>
             </div>
             <div class="brain-diff-content" id="brain-diff-content">
                 <div class="brain-diff-loading">Loading diff...</div>
@@ -516,8 +514,8 @@
     <div class="brain-merge-modal" id="brain-merge-modal">
         <div class="brain-merge-container">
             <div class="brain-merge-header">
-                <span class="brain-merge-title">üîÑ Merge Daily Notes to Long-Term Memory</span>
-                <button class="brain-kb-close" onclick="closeMemoryMerge()">√ó</button>
+                <span class="brain-merge-title">?? Merge Daily Notes to Long-Term Memory</span>
+                <button class="brain-kb-close" onclick="closeMemoryMerge()">?</button>
             </div>
             <div class="brain-merge-content">
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
@@ -546,7 +544,7 @@
             </div>
             <div class="brain-merge-footer">
                 <button class="btn btn-secondary" onclick="closeMemoryMerge()">Cancel</button>
-                <button class="btn btn-secondary" onclick="previewMerge()" id="brain-merge-preview-btn">üëÅÔ∏è Preview</button>
+                <button class="btn btn-secondary" onclick="previewMerge()" id="brain-merge-preview-btn">??Ô∏?Preview</button>
                 <button class="btn btn-primary" onclick="executeMerge()" id="brain-merge-execute" disabled>Merge Selected</button>
             </div>
         </div>
@@ -557,10 +555,10 @@
     <div class="skill-panel" id="skill-panel">
         <div class="skill-panel-header">
             <div class="skill-panel-title">
-                <span class="skill-panel-title-emoji" id="skill-panel-emoji">üß©</span>
+                <span class="skill-panel-title-emoji" id="skill-panel-emoji">?ß©</span>
                 <span class="skill-panel-title-text" id="skill-panel-name">Skill Name</span>
             </div>
-            <button class="skill-panel-close" onclick="closeSkillPanel()" title="Close (Esc)">√ó</button>
+            <button class="skill-panel-close" onclick="closeSkillPanel()" title="Close (Esc)">?</button>
         </div>
         <div class="skill-panel-content" id="skill-panel-content">
             <!-- Content will be rendered by JavaScript -->
@@ -574,17 +572,17 @@
     <!-- DOCS VIEW -->
     <div id="view-docs" class="view" style="display: none;">
         <div class="docs-container" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
-            <h1 style="margin-bottom: 1.5rem;">üìö Mission Control Documentation</h1>
+            <h1 style="margin-bottom: 1.5rem;">?? Mission Control Documentation</h1>
 
             <div class="docs-section" style="margin-bottom: 2rem; background: var(--bg-secondary); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent);">
-                <h2 style="color: var(--accent); margin-bottom: 0.5rem;">üìå Demo Mode</h2>
+                <h2 style="color: var(--accent); margin-bottom: 0.5rem;">?? Demo Mode</h2>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
                     You're currently viewing <strong>sample data</strong>. To manage your own tasks, click <strong>"Connect GitHub"</strong> in the top right corner to link your repository.
                 </p>
             </div>
 
             <div class="docs-section" style="margin-bottom: 2rem;">
-                <h2 style="color: var(--accent); margin-bottom: 1rem;">üöÄ Getting Started</h2>
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">?? Getting Started</h2>
 
                 <h3 style="margin: 1rem 0 0.5rem;">Installation</h3>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
@@ -593,7 +591,7 @@
                 <ol style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
                     <li><strong>Fork</strong> this repository to your GitHub account</li>
                     <li><strong>Copy dashboard files</strong> to your workspace: <code>index.html</code>, <code>data/</code>, <code>canvas/</code>, <code>scripts/</code>, <code>.github/</code></li>
-                    <li>Enable <strong>GitHub Pages</strong> in your repo settings (Settings ‚Üí Pages ‚Üí Branch: main)</li>
+                    <li>Enable <strong>GitHub Pages</strong> in your repo settings (Settings ??Pages ??Branch: main)</li>
                     <li>Visit <code>https://[username].github.io/mission-control/</code></li>
                 </ol>
 
@@ -602,7 +600,7 @@
                     Click <strong>"Connect GitHub"</strong> in the top right corner. You'll need a GitHub Personal Access Token with <code>repo</code> permissions.
                 </p>
                 <ol style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
-                    <li>Go to <a href="https://github.com/settings/tokens" target="_blank" style="color: var(--accent);">GitHub Settings ‚Üí Tokens</a></li>
+                    <li>Go to <a href="https://github.com/settings/tokens" target="_blank" style="color: var(--accent);">GitHub Settings ??Tokens</a></li>
                     <li>Click "Generate new token (classic)"</li>
                     <li>Select scope: <code>repo</code> (Full control of private repositories)</li>
                     <li>Copy the token and paste it in Mission Control</li>
@@ -613,28 +611,28 @@
                     Mission Control uses a Kanban-style board with these columns:
                 </p>
                 <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
-                    <li><strong>üîÑ Recurring</strong> - Cron jobs that run on schedule</li>
-                    <li><strong>üìÖ Scheduled</strong> - One-time tasks with a future date</li>
-                    <li><strong>üìë Templates</strong> - Reusable task templates</li>
-                    <li><strong>üìã Backlog</strong> - Tasks waiting to be started</li>
-                    <li><strong>üöÄ In Progress</strong> - Currently being worked on</li>
-                    <li><strong>üëÄ Review</strong> - Done, awaiting approval</li>
-                    <li><strong>‚úÖ Done</strong> - Completed tasks</li>
+                    <li><strong>?? Recurring</strong> - Cron jobs that run on schedule</li>
+                    <li><strong>?? Scheduled</strong> - One-time tasks with a future date</li>
+                    <li><strong>?? Templates</strong> - Reusable task templates</li>
+                    <li><strong>?? Backlog</strong> - Tasks waiting to be started</li>
+                    <li><strong>?? In Progress</strong> - Currently being worked on</li>
+                    <li><strong>?? Review</strong> - Done, awaiting approval</li>
+                    <li><strong>??Done</strong> - Completed tasks</li>
                 </ul>
             </div>
 
             <div class="docs-section" style="margin-bottom: 2rem;">
-                <h2 style="color: var(--accent); margin-bottom: 1rem;">‚ú® Features</h2>
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">??Features</h2>
 
                 <h3 style="margin: 1rem 0 0.5rem;">Auto-Save</h3>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
                     All changes are <strong>automatically saved</strong> to GitHub. No manual "Save" button needed!
                 </p>
                 <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
-                    <li>Drag & drop tasks between columns ‚Üí instant save</li>
-                    <li>Edit task details ‚Üí instant save</li>
-                    <li>Add/remove subtasks ‚Üí instant save</li>
-                    <li>Add comments ‚Üí instant save</li>
+                    <li>Drag & drop tasks between columns ??instant save</li>
+                    <li>Edit task details ??instant save</li>
+                    <li>Add/remove subtasks ??instant save</li>
+                    <li>Add comments ??instant save</li>
                 </ul>
 
                 <h3 style="margin: 1.5rem 0 0.5rem;">Drag & Drop</h3>
@@ -654,28 +652,28 @@
 
                 <h3 style="margin: 1.5rem 0 0.5rem;">Projects & Tags</h3>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
-                    Organize tasks by project. Use the ‚öôÔ∏è Settings to add new projects. Filter tasks using the project buttons.
+                    Organize tasks by project. Use the ?ôÔ? Settings to add new projects. Filter tasks using the project buttons.
                 </p>
             </div>
 
             <div class="docs-section" style="margin-bottom: 2rem;">
-                <h2 style="color: var(--accent); margin-bottom: 1rem;">ü§ñ MoltBot Integration</h2>
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">?? MoltBot Integration</h2>
                 <p style="color: var(--text-secondary); line-height: 1.6;">
                     Mission Control is connected to MoltBot via webhooks. When you make changes:
                 </p>
                 <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
-                    <li><strong>Move task to "In Progress"</strong> ‚Üí MoltBot receives a work order and starts processing</li>
-                    <li><strong>Add comment on Review task</strong> ‚Üí MoltBot sees your feedback</li>
-                    <li><strong>MoltBot completes work</strong> ‚Üí Task moves to "Review" automatically</li>
+                    <li><strong>Move task to "In Progress"</strong> ??MoltBot receives a work order and starts processing</li>
+                    <li><strong>Add comment on Review task</strong> ??MoltBot sees your feedback</li>
+                    <li><strong>MoltBot completes work</strong> ??Task moves to "Review" automatically</li>
                 </ul>
 
                 <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                    <strong>üí° Pro Tip:</strong> Write clear task descriptions and subtasks. The more detail you provide, the better MoltBot can execute the task.
+                    <strong>?í° Pro Tip:</strong> Write clear task descriptions and subtasks. The more detail you provide, the better MoltBot can execute the task.
                 </div>
             </div>
 
             <div class="docs-section" style="margin-bottom: 2rem;">
-                <h2 style="color: var(--accent); margin-bottom: 1rem;">‚å®Ô∏è Keyboard Shortcuts</h2>
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">?®Ô? Keyboard Shortcuts</h2>
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 0.5rem; color: var(--text-secondary);"><code>Cmd/Ctrl + Shift + R</code></td>
@@ -693,7 +691,7 @@
             </div>
 
             <div class="docs-section">
-                <h2 style="color: var(--accent); margin-bottom: 1rem;">‚ùì FAQ</h2>
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">??FAQ</h2>
 
                 <details style="margin-bottom: 1rem;">
                     <summary style="cursor: pointer; font-weight: 500;">Why don't I see my changes?</summary>
@@ -705,7 +703,7 @@
                 <details style="margin-bottom: 1rem;">
                     <summary style="cursor: pointer; font-weight: 500;">How do I create a new project?</summary>
                     <p style="color: var(--text-secondary); padding: 0.5rem 0 0 1rem;">
-                        Click the ‚öôÔ∏è Settings button (when logged in) ‚Üí Add a new project with ID, name, icon, and color.
+                        Click the ?ôÔ? Settings button (when logged in) ??Add a new project with ID, name, icon, and color.
                     </p>
                 </details>
 
@@ -723,7 +721,7 @@
     <div id="view-people" class="view" style="display: none;">
         <div class="people-container">
             <div class="people-header">
-                <h1>üë• Team</h1>
+                <h1>?ë• Team</h1>
                 <div class="people-stats" id="people-stats">
                     <!-- Stats filled by JS -->
                 </div>
@@ -741,7 +739,7 @@
     <div class="modal-overlay" id="auth-modal" onclick="if(event.target===this)hideAuthModal()">
         <div class="modal">
             <div class="modal-header">
-                <h2 class="modal-title">üîê Connect to GitHub</h2>
+                <h2 class="modal-title">?? Connect to GitHub</h2>
                 <button class="modal-close" onclick="hideAuthModal()">&times;</button>
             </div>
             <div class="modal-body">
@@ -756,8 +754,7 @@
                             <div class="step-title">Create a Personal Access Token</div>
                             <div class="step-description">
                                 <a href="https://github.com/settings/tokens/new?scopes=repo&description=Mission%20Control%20Dashboard" target="_blank">
-                                    Click here to create a token ‚Üí
-                                </a>
+                                    Click here to create a token ??                                </a>
                             </div>
                         </div>
                     </div>
@@ -781,18 +778,18 @@
                     <label class="form-label">GitHub Personal Access Token</label>
                     <input type="password" class="form-input" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
                     <div class="form-hint">
-                        üîí Your token is stored locally and never sent anywhere except GitHub.
+                        ?? Your token is stored locally and never sent anywhere except GitHub.
                     </div>
                     <div class="validation-loading" id="validation-loading">
                         <div class="spinner"></div>
                         <span>Validating token...</span>
                     </div>
                     <div class="validation-success" id="validation-success">
-                        <span>‚úì</span>
+                        <span>??/span>
                         <span>Connected as <strong id="validated-user"></strong></span>
                     </div>
                     <div class="validation-error" id="validation-error">
-                        <span>‚úó</span>
+                        <span>??/span>
                         <span id="error-message">Invalid token</span>
                     </div>
                 </div>
@@ -808,7 +805,7 @@
     <div class="modal-overlay" id="settings-modal" onclick="if(event.target===this)hideSettingsModal()">
         <div class="modal" style="max-width: 500px;">
             <div class="modal-header">
-                <h2 class="modal-title">‚öôÔ∏è Settings</h2>
+                <h2 class="modal-title">?ôÔ? Settings</h2>
                 <button class="modal-close" onclick="hideSettingsModal()">&times;</button>
             </div>
             <div class="modal-body">
@@ -822,12 +819,12 @@
                     <div id="gateway-status" style="font-size: 0.8rem; margin-top: 6px; color: var(--text-secondary);"></div>
                 </div>
                 
-                <h3 style="margin-bottom: 12px; font-size: 1rem;">üí≠ Live Thinking</h3>
+                <h3 style="margin-bottom: 12px; font-size: 1rem;">?í≠ Live Thinking</h3>
                 <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">Enable real-time thinking visibility during task processing. Requires Clawdbot Hooks Token.</p>
                     <div style="display: flex; gap: 8px;">
                         <input type="password" class="form-input" id="hooks-token-input" placeholder="Hooks Token (from clawdbot.json)" style="flex: 1;">
-                        <button class="btn btn-secondary" onclick="toggleHooksTokenVisibility()" title="Show/Hide">üëÅÔ∏è</button>
+                        <button class="btn btn-secondary" onclick="toggleHooksTokenVisibility()" title="Show/Hide">??Ô∏?/button>
                         <button class="btn btn-primary" onclick="saveHooksToken()">Save</button>
                     </div>
                     <div id="hooks-token-status" style="font-size: 0.8rem; margin-top: 6px; color: var(--text-secondary);"></div>
@@ -844,21 +841,21 @@
                         <div style="margin-bottom: 8px;">
                             <label style="font-size: 0.8rem; color: var(--text-secondary);">Icon</label>
                             <div class="emoji-picker" style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üìÅ')">üìÅ</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üìä')">üìä</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üíº')">üíº</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üöÄ')">üöÄ</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üí°')">üí°</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üéØ')">üéØ</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üì£')">üì£</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üõ†Ô∏è')">üõ†Ô∏è</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üì±')">üì±</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üåê')">üåê</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üí∞')">üí∞</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üìù')">üìù</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('üè†')">üè†</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('‚ù§Ô∏è')">‚ù§Ô∏è</button>
-                                <button type="button" class="emoji-btn" onclick="selectEmoji('‚≠ê')">‚≠ê</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??')">??</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??')">??</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?íº')">?íº</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??')">??</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?í°')">?í°</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?éØ')">?éØ</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?ì£')">?ì£</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??Ô∏?)">??Ô∏?/button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?ì±')">?ì±</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??')">??</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?í∞')">?í∞</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??')">??</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('??')">??</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('?§Ô?')">?§Ô?</button>
+                                <button type="button" class="emoji-btn" onclick="selectEmoji('‚≠?)">‚≠?/button>
                                 <input type="text" class="form-input" id="new-project-icon" placeholder="or custom..." style="width: 100px; font-size: 1.1rem;">
                             </div>
                         </div>
@@ -878,7 +875,7 @@
     <div class="modal-overlay" id="commit-modal" onclick="if(event.target===this)hideCommitModal()">
         <div class="modal">
             <div class="modal-header">
-                <h2 class="modal-title">üíæ Save Changes to GitHub</h2>
+                <h2 class="modal-title">?íæ Save Changes to GitHub</h2>
                 <button class="modal-close" onclick="hideCommitModal()">&times;</button>
             </div>
             <div class="modal-body">
@@ -978,21 +975,21 @@
                 <!-- Learnings Section (visible only in review status) -->
                 <div class="form-group" id="learnings-section" style="display: none;">
                     <label class="form-label">
-                        üß† Learnings from this Task
+                        ?? Learnings from this Task
                         <span class="learnings-hint">(Accept learnings to save to Memory)</span>
                     </label>
                     <div class="learnings-list" id="learnings-list">
                         <!-- Learnings will be rendered here -->
                     </div>
                     <div class="learnings-actions">
-                        <button class="btn btn-secondary btn-small" onclick="extractLearnings()">üîç Extract from Comments</button>
+                        <button class="btn btn-secondary btn-small" onclick="extractLearnings()">?? Extract from Comments</button>
                         <button class="btn btn-secondary btn-small" onclick="addManualLearning()">+ Add Learning</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" id="btn-delete-task" onclick="deleteTask()" style="margin-right: auto;">Delete</button>
-                <button class="btn btn-secondary" id="btn-task-to-cron" onclick="openTaskToCronWizard(currentEditingTaskId)" title="Convert to recurring cron job">‚è∞ As Cron</button>
+                <button class="btn btn-secondary" id="btn-task-to-cron" onclick="openTaskToCronWizard(currentEditingTaskId)" title="Convert to recurring cron job">??As Cron</button>
                 <button class="btn btn-secondary" onclick="hideTaskModal()">Cancel</button>
                 <button class="btn btn-primary" onclick="saveTask()">Save Task</button>
             </div>
@@ -1113,12 +1110,12 @@
                     clearTimeout(timeout);
                     
                     if (response.ok) {
-                        console.log(`‚úì Gateway found at ${url}`);
+                        console.log(`??Gateway found at ${url}`);
                         setGatewayUrl(url);
                         return url;
                     }
                 } catch (e) {
-                    console.log(`‚úó Gateway not available at ${url}`);
+                    console.log(`??Gateway not available at ${url}`);
                 }
             }
             
@@ -1349,11 +1346,11 @@
                 }
             ],
             projects: [
-                { id: "devops", name: "DevOps", color: "#3b82f6", icon: "üíª" },
-                { id: "growth", name: "Growth", color: "#10b981", icon: "üìà" },
-                { id: "design", name: "Design", color: "#f59e0b", icon: "üé®" },
-                { id: "personal", name: "Personal", color: "#8b5cf6", icon: "üè†" },
-                { id: "wellness", name: "Wellness", color: "#ec4899", icon: "üßò" }
+                { id: "devops", name: "DevOps", color: "#3b82f6", icon: "?íª" },
+                { id: "growth", name: "Growth", color: "#10b981", icon: "??" },
+                { id: "design", name: "Design", color: "#f59e0b", icon: "?é®" },
+                { id: "personal", name: "Personal", color: "#8b5cf6", icon: "??" },
+                { id: "wellness", name: "Wellness", color: "#ec4899", icon: "??" }
             ],
             activities: [
                 { type: "completed", actor: "You", task: "Social media content calendar", time: "2 hours ago" },
@@ -1372,7 +1369,7 @@
             }
 
             STATE.isLoading = true;
-            showToast('success', 'üì• Loading tasks from GitHub...');
+            showToast('success', '?ì• Loading tasks from GitHub...');
 
             try {
                 const response = await fetch(
@@ -1400,7 +1397,7 @@
                 STATE.fileSha = fileData.sha;  // Needed for updates
 
                 console.log('Loaded tasks from GitHub:', data.tasks.length, 'tasks');
-                showToast('success', `‚úì Loaded ${data.tasks.length} tasks from GitHub`);
+                showToast('success', `??Loaded ${data.tasks.length} tasks from GitHub`);
 
             } catch (error) {
                 console.error('Error loading from GitHub:', error);
@@ -1449,7 +1446,7 @@
                                 STATE.fileSha = remoteFile.sha;
                                 STATE.hasUnsavedChanges = false;
                                 renderAll();
-                                showToast('info', 'üîÑ Loaded latest version from GitHub');
+                                showToast('info', '?? Loaded latest version from GitHub');
                                 return false;
                             } else if (choice === 'overwrite') {
                                 // Continue with save, using new SHA
@@ -1488,7 +1485,7 @@
                     // Handle 409 Conflict specifically
                     if (response.status === 409) {
                         STATE.isSaving = false;
-                        showToast('warning', '‚ö†Ô∏è Conflict detected - please refresh');
+                        showToast('warning', '?†Ô? Conflict detected - please refresh');
                         return false;
                     }
                     throw new Error(error.message || 'Failed to save');
@@ -1500,7 +1497,7 @@
                 STATE.hasUnsavedChanges = false;
                 document.getElementById('unsaved-banner').classList.remove('visible');
 
-                showToast('success', '‚úì Saved to GitHub!');
+                showToast('success', '??Saved to GitHub!');
                 STATE.isSaving = false;
                 return true;
 
@@ -1572,7 +1569,7 @@
                 dialog.innerHTML = `
                     <div class="modal" style="max-width: 450px;">
                         <div class="modal-header">
-                            <h2 class="modal-title">‚ö†Ô∏è Newer Version Exists</h2>
+                            <h2 class="modal-title">?†Ô? Newer Version Exists</h2>
                         </div>
                         <div class="modal-body">
                             <p style="margin-bottom: 16px;">Someone else (or another process) has updated the tasks since you loaded them.</p>
@@ -1580,8 +1577,8 @@
                         </div>
                         <div class="modal-footer" style="display: flex; gap: 8px; justify-content: flex-end;">
                             <button class="btn btn-secondary" onclick="document.getElementById('conflict-dialog').remove(); window._conflictResolve('cancel')">Cancel</button>
-                            <button class="btn btn-primary" onclick="document.getElementById('conflict-dialog').remove(); window._conflictResolve('reload')">üîÑ Load Latest</button>
-                            <button class="btn btn-danger" onclick="document.getElementById('conflict-dialog').remove(); window._conflictResolve('overwrite')">‚ö†Ô∏è Overwrite</button>
+                            <button class="btn btn-primary" onclick="document.getElementById('conflict-dialog').remove(); window._conflictResolve('reload')">?? Load Latest</button>
+                            <button class="btn btn-danger" onclick="document.getElementById('conflict-dialog').remove(); window._conflictResolve('overwrite')">?†Ô? Overwrite</button>
                         </div>
                     </div>
                 `;
@@ -1726,13 +1723,13 @@
                                    !cron.enabled ? 'disabled' : 
                                    cron.lastStatus === 'error' ? 'error' : 
                                    isRunning(cron) ? 'running' : 'ok';
-                const statusText = cron.pendingExecution ? 'Queued ‚è≥' :
+                const statusText = cron.pendingExecution ? 'Queued ?? :
                                   cron.pending ? 'Pending sync' :
                                   !cron.enabled ? 'Disabled' :
                                   isRunning(cron) ? 'Running...' :
                                   cron.lastStatus === 'error' ? 'Error' : 'Active';
                 const nextRun = cron.pendingExecution ? 'Will run on sync' : 
-                               cron.pending ? '‚è≥' : (cron.nextRunAt ? formatRelativeTime(new Date(cron.nextRunAt)) : 'N/A');
+                               cron.pending ? '?? : (cron.nextRunAt ? formatRelativeTime(new Date(cron.nextRunAt)) : 'N/A');
                 
                 const projectData = cron.project ? (STATE.data?.projects || []).find(p => p.id === cron.project) : null;
                 const projectTag = projectData ? `<span class="task-tag" style="background: ${projectData.color}20; color: ${projectData.color};">${projectData.icon || ''} ${projectData.name}</span>` : '';
@@ -1818,10 +1815,10 @@
             const hint = skill.configHint || '';
             
             const badges = {
-                'ready': { icon: '‚úÖ', class: 'ready' },
-                'needs-config': { icon: '‚ö†Ô∏è', class: 'needs-config' },
-                'missing-deps': { icon: '‚ùå', class: 'missing-deps' },
-                'unknown': { icon: '‚ùì', class: 'needs-config' }
+                'ready': { icon: '??, class: 'ready' },
+                'needs-config': { icon: '?†Ô?', class: 'needs-config' },
+                'missing-deps': { icon: '??, class: 'missing-deps' },
+                'unknown': { icon: '??, class: 'needs-config' }
             };
             
             const badge = badges[status] || badges['ready'];
@@ -1844,14 +1841,14 @@
             // CLI Dependencies
             if (cliDeps.required.length > 0) {
                 html += `
-                    <div class="skill-deps-title">üîß CLI Dependencies</div>
+                    <div class="skill-deps-title">?îß CLI Dependencies</div>
                     <div class="skill-deps-list">
                 `;
                 for (const cmd of cliDeps.required) {
                     const isFound = cliDeps.found.includes(cmd);
                     html += `
                         <div class="skill-dep-item ${isFound ? 'found' : 'missing'}">
-                            <span class="skill-dep-icon">${isFound ? '‚úÖ' : '‚ùå'}</span>
+                            <span class="skill-dep-icon">${isFound ? '?? : '??}</span>
                             <code>${cmd}</code>
                             ${isFound ? '<span style="color: var(--text-secondary); font-size: 0.75rem;">(installed)</span>' : '<span style="color: var(--accent-red); font-size: 0.75rem;">(not found)</span>'}
                         </div>
@@ -1863,7 +1860,7 @@
             // Config/Auth Dependencies
             if (configDeps.required.length > 0) {
                 html += `
-                    <div class="skill-deps-title" style="margin-top: ${cliDeps.required.length > 0 ? '1rem' : '0'};">üîë Configuration</div>
+                    <div class="skill-deps-title" style="margin-top: ${cliDeps.required.length > 0 ? '1rem' : '0'};">?? Configuration</div>
                     <div class="skill-deps-list">
                 `;
                 for (const req of configDeps.required) {
@@ -1884,7 +1881,7 @@
                     
                     html += `
                         <div class="skill-dep-item ${isSatisfied ? 'found' : 'missing'}">
-                            <span class="skill-dep-icon">${isSatisfied ? '‚úÖ' : '‚ùå'}</span>
+                            <span class="skill-dep-icon">${isSatisfied ? '?? : '??}</span>
                             <code>${escapeHtml(label)}</code>
                             ${isSatisfied ? '<span style="color: var(--text-secondary); font-size: 0.75rem;">(configured)</span>' : '<span style="color: var(--accent-red); font-size: 0.75rem;">(missing)</span>'}
                         </div>
@@ -1915,15 +1912,15 @@
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 800px; max-height: 90vh;">
                     <div class="modal-header">
-                        <h2 class="modal-title">${skill.emoji || 'üîß'} ${skill.name} ${statusBadge}</h2>
+                        <h2 class="modal-title">${skill.emoji || '?îß'} ${skill.name} ${statusBadge}</h2>
                         <button class="modal-close" onclick="closeSkillDetail()">&times;</button>
                     </div>
                     <div class="modal-body" style="max-height: calc(90vh - 140px); overflow-y: auto;">
                         <!-- Tabs -->
                         <div class="skill-tabs" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
-                            <button class="skill-tab active" onclick="switchSkillTab('overview', this)">üìã Overview</button>
-                            <button class="skill-tab" onclick="switchSkillTab('deps', this)">üîß Dependencies</button>
-                            <button class="skill-tab" onclick="switchSkillTab('editor', this)">üìù SKILL.md ${!isEditable ? '(read-only)' : ''}</button>
+                            <button class="skill-tab active" onclick="switchSkillTab('overview', this)">?? Overview</button>
+                            <button class="skill-tab" onclick="switchSkillTab('deps', this)">?îß Dependencies</button>
+                            <button class="skill-tab" onclick="switchSkillTab('editor', this)">?? SKILL.md ${!isEditable ? '(read-only)' : ''}</button>
                         </div>
                         
                         <!-- Overview Tab -->
@@ -1937,7 +1934,7 @@
                                 <label class="form-label">Details</label>
                                 <div class="skill-detail-meta">
                                     <div><strong>Location:</strong> <code style="font-size: 0.8rem; word-break: break-all;">${skill.location || 'Unknown'}</code></div>
-                                    <div><strong>Source:</strong> <span class="skill-source-badge ${skill.source}">${skill.source === 'builtin' ? 'üì¶ Built-in (read-only)' : skill.source === 'workspace' ? 'üìÅ Workspace (editable)' : skill.source || 'Unknown'}</span></div>
+                                    <div><strong>Source:</strong> <span class="skill-source-badge ${skill.source}">${skill.source === 'builtin' ? '?ì¶ Built-in (read-only)' : skill.source === 'workspace' ? '?? Workspace (editable)' : skill.source || 'Unknown'}</span></div>
                                     ${skill.homepage ? `<div><strong>Homepage:</strong> <a href="${skill.homepage}" target="_blank" rel="noopener">${skill.homepage}</a></div>` : ''}
                                 </div>
                             </div>
@@ -1976,7 +1973,7 @@
                                         <pre style="margin: 0; white-space: pre-wrap; font-size: 0.85rem; line-height: 1.4;">${escapeHtml(skillMdContent) || 'Content not available for built-in skills. View the file directly at:\n' + skill.location + '/SKILL.md'}</pre>
                                     </div>
                                     <div class="form-hint" style="margin-top: 0.5rem;">
-                                        üí° Built-in skills cannot be edited. To customize, copy to ~/clawd/skills/${skill.id}/ and edit there.
+                                        ?í° Built-in skills cannot be edited. To customize, copy to ~/clawd/skills/${skill.id}/ and edit there.
                                     </div>
                                 </div>
                             `}
@@ -2198,7 +2195,7 @@
             if (filteredSkills.length === 0) {
                 container.innerHTML = `
                     <div class="skills-empty">
-                        <div class="skills-empty-icon">üîç</div>
+                        <div class="skills-empty-icon">??</div>
                         <div class="skills-empty-title">No skills found</div>
                         <div class="skills-empty-text">
                             ${searchQuery ? 'Try a different search term or clear filters.' : 'No skills match the selected filter.'}
@@ -2221,7 +2218,7 @@
                 html += `
                     <div class="skills-category">
                         <div class="skills-category-header">
-                            <span class="skills-category-title">üè† Workspace Skills</span>
+                            <span class="skills-category-title">?? Workspace Skills</span>
                             <span class="skills-category-count">${workspaceSkills.length}</span>
                         </div>
                         <div class="skills-grid">
@@ -2237,7 +2234,7 @@
                 html += `
                     <div class="skills-category">
                         <div class="skills-category-header">
-                            <span class="skills-category-title">üì¶ Built-in Skills</span>
+                            <span class="skills-category-title">?ì¶ Built-in Skills</span>
                             <span class="skills-category-count">${builtinSkills.length}</span>
                         </div>
                         <div class="skills-grid">
@@ -2276,7 +2273,7 @@
                      data-skill-id="${skill.id}">
                     <div class="skill-card-top">
                         <div class="skill-card-info">
-                            <span class="skill-card-emoji">${skill.emoji || 'üîß'}</span>
+                            <span class="skill-card-emoji">${skill.emoji || '?îß'}</span>
                             <span class="skill-card-title">${escapeHtml(skill.name)}</span>
                         </div>
                         ${actionElement}
@@ -2425,7 +2422,7 @@
             STATE.currentPanelSkillId = skillId;
             
             // Update panel header
-            document.getElementById('skill-panel-emoji').textContent = skill.emoji || 'üîß';
+            document.getElementById('skill-panel-emoji').textContent = skill.emoji || '?îß';
             document.getElementById('skill-panel-name').textContent = skill.name;
             
             // Build panel content
@@ -2443,10 +2440,10 @@
                     <div class="skill-panel-section-title">Status</div>
                     <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
                         ${statusBadge}
-                        <span class="skill-source-badge ${skill.source}">${skill.source === 'builtin' ? 'üì¶ Built-in' : 'üè† Workspace'}</span>
+                        <span class="skill-source-badge ${skill.source}">${skill.source === 'builtin' ? '?ì¶ Built-in' : '?? Workspace'}</span>
                         ${skill.enabled !== false 
-                            ? '<span style="color: #10b981;">‚úì Enabled</span>' 
-                            : '<span style="color: var(--text-secondary);">‚óã Disabled</span>'}
+                            ? '<span style="color: #10b981;">??Enabled</span>' 
+                            : '<span style="color: var(--text-secondary);">??Disabled</span>'}
                     </div>
                 </div>
                 
@@ -2492,7 +2489,7 @@
                         <pre style="margin: 0; white-space: pre-wrap; font-size: 0.8rem; color: var(--text-secondary);">${escapeHtml(skill.skillMdContent || 'Content not available for built-in skills.')}</pre>
                     </div>
                     <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">
-                        üí° Built-in skills cannot be edited. Copy to workspace to customize.
+                        ?í° Built-in skills cannot be edited. Copy to workspace to customize.
                     </div>
                 </div>
                 `}
@@ -2706,7 +2703,7 @@
             if (files.length === 0) {
                 container.innerHTML = `
                     <div class="brain-empty">
-                        <div class="brain-empty-icon">üìÇ</div>
+                        <div class="brain-empty-icon">??</div>
                         <div class="brain-empty-title">No memory files</div>
                         <div class="brain-empty-text">Create your first memory entry with the Knowledge Builder.</div>
                     </div>
@@ -2758,7 +2755,7 @@
                 html += `
                     <div class="brain-file-group">
                         <div class="brain-file-group-header" onclick="toggleBrainFileGroup(this)">
-                            <span>üß† Long-term Memory</span>
+                            <span>?? Long-term Memory</span>
                             <span class="brain-file-group-count">${longTermFiles.length}</span>
                         </div>
                         <div class="brain-file-group-items">
@@ -2773,7 +2770,7 @@
                 html += `
                     <div class="brain-file-group">
                         <div class="brain-file-group-header" onclick="toggleBrainFileGroup(this)">
-                            <span>üìÖ Daily Notes</span>
+                            <span>?? Daily Notes</span>
                             <span class="brain-file-group-count">${dailyFiles.length}</span>
                         </div>
                         <div class="brain-file-group-items">
@@ -2787,7 +2784,7 @@
             if (files.length === 0) {
                 html += `
                     <div class="brain-empty">
-                        <div class="brain-empty-icon">üîç</div>
+                        <div class="brain-empty-icon">??</div>
                         <div class="brain-empty-title">No matches found</div>
                         <div class="brain-empty-text">Try a different search term or clear filters.</div>
                     </div>
@@ -2809,7 +2806,7 @@
         function renderBrainFileItem(file, searchQuery = '') {
             const isActive = STATE.brainActiveFile === file.path;
             const isModified = STATE.brainModifiedFiles[file.path];
-            const icon = file.type === 'long-term' ? 'üß†' : 'üìÑ';
+            const icon = file.type === 'long-term' ? '??' : '??';
             const hasSearchMatch = STATE.brainSearchResults[file.path] && STATE.brainSearchResults[file.path].length > 0;
             
             // Format date from filename if daily
@@ -2945,8 +2942,8 @@
                 
                 return `
                     <div class="brain-editor-tab${isActive ? ' active' : ''}" onclick="openMemoryFile('${path}')">
-                        <span>${escapeHtml(name)}${isModified ? ' ‚Ä¢' : ''}</span>
-                        <span class="brain-editor-tab-close" onclick="event.stopPropagation(); closeBrainTab('${path}')">√ó</span>
+                        <span>${escapeHtml(name)}${isModified ? ' ?? : ''}</span>
+                        <span class="brain-editor-tab-close" onclick="event.stopPropagation(); closeBrainTab('${path}')">?</span>
                     </div>
                 `;
             }).join('');
@@ -2981,7 +2978,7 @@
             if (!STATE.brainActiveFile) {
                 contentContainer.innerHTML = `
                     <div class="brain-empty">
-                        <div class="brain-empty-icon">üß†</div>
+                        <div class="brain-empty-icon">??</div>
                         <div class="brain-empty-title">Your Memory, Organized</div>
                         <div class="brain-empty-text">
                             Select a file from the explorer to view and edit, or use the Knowledge Builder to add new information.
@@ -3121,7 +3118,7 @@
         function toggleBrainPreview() {
             STATE.brainPreviewMode = !STATE.brainPreviewMode;
             const btn = document.getElementById('brain-preview-toggle');
-            btn.innerHTML = STATE.brainPreviewMode ? '‚úèÔ∏è Edit' : 'üëÅÔ∏è Preview';
+            btn.innerHTML = STATE.brainPreviewMode ? '?èÔ? Edit' : '??Ô∏?Preview';
             renderBrainEditor();
         }
         
@@ -3294,7 +3291,7 @@
                 return `
                     <div class="brain-changelog-item" onclick="openDiffModal('${commit.sha}')" title="Click to view changes">
                         <div class="brain-changelog-item-header">
-                            <span class="brain-changelog-author">${isClawdbot ? 'ü§ñ' : 'üë§'} ${escapeHtml(author)}</span>
+                            <span class="brain-changelog-author">${isClawdbot ? '??' : '?ë§'} ${escapeHtml(author)}</span>
                             <span class="brain-changelog-time">${relativeTime}</span>
                         </div>
                         <div class="brain-changelog-message">${escapeHtml(message)}</div>
@@ -3338,7 +3335,7 @@
             if (commit) {
                 const date = new Date(commit.commit.author.date);
                 titleEl.textContent = commit.commit.message.split('\n')[0];
-                metaEl.textContent = `${commit.commit.author.name} ‚Ä¢ ${date.toLocaleString('de-DE')} ‚Ä¢ ${sha.substring(0, 7)}`;
+                metaEl.textContent = `${commit.commit.author.name} ??${date.toLocaleString('de-DE')} ??${sha.substring(0, 7)}`;
             }
             
             try {
@@ -3433,7 +3430,7 @@
             }
             
             // File icon based on filename
-            const icon = file.filename === 'MEMORY.md' ? 'üß†' : 'üìÑ';
+            const icon = file.filename === 'MEMORY.md' ? '??' : '??';
             
             return `
                 <div class="brain-diff-file">
@@ -3474,7 +3471,7 @@
             const settings = getAISettings();
             const aiBtn = document.getElementById('brain-kb-ai-btn');
             if (settings.provider === 'local' || !settings.apiKey) {
-                aiBtn.title = 'Configure AI first (click ‚öôÔ∏è)';
+                aiBtn.title = 'Configure AI first (click ?ôÔ?)';
                 aiBtn.style.opacity = '0.6';
             } else {
                 aiBtn.title = `Process with ${settings.provider === 'openrouter' ? 'OpenRouter' : 'OpenAI'}`;
@@ -3619,8 +3616,8 @@
                 const settings = getAISettings();
                 
                 if (settings.provider === 'local' || !settings.apiKey) {
-                    showToast('error', 'Configure AI in settings first (click ‚öôÔ∏è)');
-                    resultContent.innerHTML = '<div style="color: var(--accent-yellow);">‚ö†Ô∏è AI not configured. Click ‚öôÔ∏è to add your API key.</div>';
+                    showToast('error', 'Configure AI in settings first (click ?ôÔ?)');
+                    resultContent.innerHTML = '<div style="color: var(--accent-yellow);">?†Ô? AI not configured. Click ?ôÔ? to add your API key.</div>';
                     return;
                 }
                 
@@ -3648,7 +3645,7 @@ Output the formatted memory entry:`;
                 } catch (error) {
                     console.error('AI error:', error);
                     showToast('error', `AI error: ${error.message}`);
-                    resultContent.innerHTML = `<div style="color: var(--accent-red);">‚ùå ${escapeHtml(error.message)}</div>`;
+                    resultContent.innerHTML = `<div style="color: var(--accent-red);">??${escapeHtml(error.message)}</div>`;
                     return;
                 }
             }
@@ -3661,12 +3658,12 @@ Output the formatted memory entry:`;
                 // Smart formatting - detect content type
                 const lines = input.split('\n').filter(l => l.trim());
                 const hasMultipleLines = lines.length > 1;
-                const looksLikeList = lines.some(l => /^[-*‚Ä¢]/.test(l.trim()) || /^\d+[.)]/.test(l.trim()));
+                const looksLikeList = lines.some(l => /^[-*?¢]/.test(l.trim()) || /^\d+[.)]/.test(l.trim()));
                 
                 if (looksLikeList || hasMultipleLines) {
                     // Format as structured list
                     const formatted = lines.map(l => {
-                        const cleaned = l.trim().replace(/^[-*‚Ä¢]\s*/, '').replace(/^\d+[.)]\s*/, '');
+                        const cleaned = l.trim().replace(/^[-*?¢]\s*/, '').replace(/^\d+[.)]\s*/, '');
                         return `- ${cleaned}`;
                     }).join('\n');
                     result = `## Notes from ${timestamp}\n\n${formatted}\n`;
@@ -3822,7 +3819,7 @@ Output the formatted memory entry:`;
             if (container) {
                 container.innerHTML = `
                     <div class="brain-empty">
-                        <div class="brain-empty-icon">üîí</div>
+                        <div class="brain-empty-icon">??</div>
                         <div class="brain-empty-title">Connect Required</div>
                         <div class="brain-empty-text">${escapeHtml(message)}</div>
                     </div>
@@ -3857,8 +3854,8 @@ Output the formatted memory entry:`;
                     <label class="brain-merge-file" onclick="toggleMergeFile('${file.path}')">
                         <input type="checkbox" id="merge-${file.path}" onchange="updateMergeSelection()">
                         <div class="brain-merge-file-info">
-                            <div class="brain-merge-file-name">üìÖ ${displayDate}</div>
-                            <div class="brain-merge-file-meta">${file.name} ‚Ä¢ ${wordCount} words</div>
+                            <div class="brain-merge-file-name">?? ${displayDate}</div>
+                            <div class="brain-merge-file-meta">${file.name} ??${wordCount} words</div>
                         </div>
                     </label>
                 `;
@@ -4312,7 +4309,7 @@ Output the consolidated content in clean Markdown format:`;
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
             toast.innerHTML = `
-                <span>${type === 'success' ? '‚úì' : '‚úó'}</span>
+                <span>${type === 'success' ? '?? : '??}</span>
                 <span>${message}</span>
             `;
             container.appendChild(toast);
@@ -4349,7 +4346,7 @@ Output the consolidated content in clean Markdown format:`;
             // URLs without markdown (auto-link)
             html = html.replace(/(^|[^"=])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" style="color: var(--accent-blue);">$2</a>');
             
-            // Checkboxes: ‚úÖ and ‚òëÔ∏è (already rendered, just style them)
+            // Checkboxes: ??and ?ëÔ? (already rendered, just style them)
             // Keep emojis as-is
             
             // Tables: | col | col |
@@ -4507,28 +4504,28 @@ Output the consolidated content in clean Markdown format:`;
             // Review actions
             const reviewActions = task.status === 'review' ? `
                 <div class="task-actions" onclick="event.stopPropagation()">
-                    <button class="task-action-btn done" onclick="quickMoveTask('${task.id}', 'done')" title="Mark as Done">‚úì Done</button>
-                    <button class="task-action-btn backlog" onclick="quickMoveTask('${task.id}', 'backlog')" title="Move to Backlog">‚Ü© Backlog</button>
+                    <button class="task-action-btn done" onclick="quickMoveTask('${task.id}', 'done')" title="Mark as Done">??Done</button>
+                    <button class="task-action-btn backlog" onclick="quickMoveTask('${task.id}', 'backlog')" title="Move to Backlog">??Backlog</button>
                 </div>
             ` : '';
 
             // Archive/Unarchive actions for done tasks
             const archiveActions = task.status === 'done' && !isArchived ? `
                 <div class="task-actions" onclick="event.stopPropagation()">
-                    <button class="task-action-btn archive" onclick="archiveTask('${task.id}')" title="Archive this task">üì¶ Archive</button>
+                    <button class="task-action-btn archive" onclick="archiveTask('${task.id}')" title="Archive this task">?ì¶ Archive</button>
                 </div>
             ` : '';
 
             // Unarchive button for archived tasks
             const unarchiveActions = isArchived ? `
                 <div class="task-actions" onclick="event.stopPropagation()">
-                    <button class="task-action-btn unarchive" onclick="unarchiveTask('${task.id}')" title="Restore from archive">üì§ Unarchive</button>
+                    <button class="task-action-btn unarchive" onclick="unarchiveTask('${task.id}')" title="Restore from archive">?ì§ Unarchive</button>
                 </div>
             ` : '';
 
             // Archived badge
             const archivedBadge = isArchived ? `
-                <span class="archived-badge">üì¶ Archived</span>
+                <span class="archived-badge">?ì¶ Archived</span>
             ` : '';
 
             // Comment indicator
@@ -4571,7 +4568,7 @@ Output the consolidated content in clean Markdown format:`;
                     processingIndicator = `
                         <div class="processing-indicator${isTimeout ? ' timeout' : ''}" title="${task.isTemporary ? 'Cron job executing...' : 'Agent arbeitet an diesem Task...'}">
                             <div class="spinner"></div>
-                            <span>${isTimeout ? '‚ö†Ô∏è ' : ''}In Bearbeitung seit <span class="processing-time${isTimeout ? ' timeout' : ''}" data-started-at="${task.processingStartedAt}">${timeText}</span></span>
+                            <span>${isTimeout ? '?†Ô? ' : ''}In Bearbeitung seit <span class="processing-time${isTimeout ? ' timeout' : ''}" data-started-at="${task.processingStartedAt}">${timeText}</span></span>
                         </div>
                     `;
                 } else if (hasRecentActivity) {
@@ -4642,11 +4639,11 @@ Output the consolidated content in clean Markdown format:`;
                     ${task.status === 'in_progress' && commentsCount > 0 ? `
                         <div class="thinking-section" onclick="event.stopPropagation()">
                             <button class="thinking-toggle" onclick="toggleThinkingPanel('${task.id}')">
-                                üí≠ Activity Log <span class="thinking-badge">${hasRecentActivity ? 'Live' : commentsCount}</span>
+                                ?í≠ Activity Log <span class="thinking-badge">${hasRecentActivity ? 'Live' : commentsCount}</span>
                             </button>
                             <div class="thinking-panel" id="thinking-panel-${task.id}" style="display: ${hasRecentActivity ? 'block' : 'none'};">
                                 <div class="thinking-panel-header">
-                                    üí≠ Agent Activity Stream
+                                    ?í≠ Agent Activity Stream
                                 </div>
                                 <div id="thinking-content-${task.id}">
                                     ${renderActivityLog(task.comments || [], 'thinking-panel-' + task.id)}
@@ -4694,7 +4691,7 @@ Output the consolidated content in clean Markdown format:`;
                 renderTasks();
 
                 // AUTO-SAVE
-                debouncedAutoSave(`Move "${task.title}" ‚Üí ${newStatus}`);
+                debouncedAutoSave(`Move "${task.title}" ??${newStatus}`);
             }
         }
 
@@ -4911,7 +4908,7 @@ Output the consolidated content in clean Markdown format:`;
 
             // AUTO-SAVE (async, doesn't block UI)
             const action = statusChanged
-                ? `Move "${task.title}" ‚Üí ${newStatus}`
+                ? `Move "${task.title}" ??${newStatus}`
                 : `Reorder "${task.title}"`;
             debouncedAutoSave(action);
 
@@ -5055,7 +5052,7 @@ Output the consolidated content in clean Markdown format:`;
             }
 
             const commitMessage = `${action} (via Mission Control)`;
-            showToast('info', 'üíæ Saving...');
+            showToast('info', '?íæ Saving...');
 
             const success = await saveTasksToGitHub(commitMessage);
             if (!success) {
@@ -5100,7 +5097,7 @@ Output the consolidated content in clean Markdown format:`;
         function addActivity(text, type = 'updated') {
             STATE.data.activities = STATE.data.activities || [];
             
-            // Parse the text to extract task name (format: "üì¶ Archived: Task Name" or similar)
+            // Parse the text to extract task name (format: "?ì¶ Archived: Task Name" or similar)
             const taskMatch = text.match(/:\s*(.+)$/) || text.match(/Archived\s+\d+\s+tasks?/);
             const taskName = taskMatch ? taskMatch[1] || taskMatch[0] : text;
             
@@ -5137,7 +5134,7 @@ Output the consolidated content in clean Markdown format:`;
             if (task) {
                 task.archived = true;
                 task.archivedAt = new Date().toISOString();
-                addActivity(`üì¶ Archived: ${task.title}`, 'archive');
+                addActivity(`?ì¶ Archived: ${task.title}`, 'archive');
                 renderTasks();
                 saveToGitHub();
             }
@@ -5150,7 +5147,7 @@ Output the consolidated content in clean Markdown format:`;
                 delete task.archivedAt;
                 // Move back to done or backlog
                 task.status = 'done';
-                addActivity(`üì§ Unarchived: ${task.title}`, 'unarchive');
+                addActivity(`?ì§ Unarchived: ${task.title}`, 'unarchive');
                 renderTasks();
                 saveToGitHub();
             }
@@ -5169,7 +5166,7 @@ Output the consolidated content in clean Markdown format:`;
                 task.archivedAt = new Date().toISOString();
             });
             
-            addActivity(`üì¶ Archived ${count} task${count > 1 ? 's' : ''} from Done`, 'archive');
+            addActivity(`?ì¶ Archived ${count} task${count > 1 ? 's' : ''} from Done`, 'archive');
             renderTasks();
             debouncedAutoSave(`Archive ${count} task${count > 1 ? 's' : ''}`);
             showToast(`Archived ${count} task${count > 1 ? 's' : ''}`, 'success');
@@ -5307,7 +5304,7 @@ Output the consolidated content in clean Markdown format:`;
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 700px; max-height: 80vh;">
                     <div class="modal-header">
-                        <h2 class="modal-title">üì¶ Archive (${archivedTasks.length} tasks)</h2>
+                        <h2 class="modal-title">?ì¶ Archive (${archivedTasks.length} tasks)</h2>
                         <button class="modal-close" onclick="closeArchiveView()">&times;</button>
                     </div>
                     <div class="modal-body" style="overflow-y: auto; max-height: 50vh;">
@@ -5321,14 +5318,14 @@ Output the consolidated content in clean Markdown format:`;
                                     </div>
                                 </div>
                                 <button class="btn btn-secondary btn-small" onclick="unarchiveTask('${task.id}'); closeArchiveView();">
-                                    üì§ Restore
+                                    ?ì§ Restore
                                 </button>
                             </div>
                           `).join('')
                         }
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" onclick="exportArchivedTasksCSV()">üì• Export CSV</button>
+                        <button class="btn btn-secondary" onclick="exportArchivedTasksCSV()">?ì• Export CSV</button>
                         <button class="btn btn-primary" onclick="closeArchiveView()">Close</button>
                     </div>
                 </div>
@@ -5514,7 +5511,7 @@ Output the consolidated content in clean Markdown format:`;
             container.innerHTML = currentCronTags.map(tag => `
                 <span class="tag-chip">
                     ${tag}
-                    <span class="tag-remove" onclick="removeCronTag('${tag}')" title="Remove">‚úï</span>
+                    <span class="tag-remove" onclick="removeCronTag('${tag}')" title="Remove">??/span>
                 </span>
             `).join('');
         }
@@ -5549,7 +5546,7 @@ Output the consolidated content in clean Markdown format:`;
             container.innerHTML = currentTaskTags.map(tag => `
                 <span class="tag-chip">
                     ${tag}
-                    <span class="tag-remove" onclick="removeTag('${tag}')" title="Remove">‚úï</span>
+                    <span class="tag-remove" onclick="removeTag('${tag}')" title="Remove">??/span>
                 </span>
             `).join('');
         }
@@ -5589,7 +5586,7 @@ Output the consolidated content in clean Markdown format:`;
             isEditingTemplate = task.isTemplate === true;
 
             // Populate modal
-            document.getElementById('task-modal-title').textContent = task.isTemplate ? 'üìë Edit Template' : 'Edit Task';
+            document.getElementById('task-modal-title').textContent = task.isTemplate ? '?? Edit Template' : 'Edit Task';
             document.getElementById('task-title').value = task.title;
             document.getElementById('task-description').value = task.description;
             document.getElementById('task-status').value = task.isTemplate ? (task.baseStatus || 'backlog') : task.status;
@@ -5632,7 +5629,7 @@ Output the consolidated content in clean Markdown format:`;
                           onclick="startEditSubtask('${task.id}', '${sub.id}')"
                           title="Click to edit"
                           style="cursor: pointer;">${sub.title}</span>
-                    <button class="subtask-delete" onclick="deleteSubtask('${task.id}', '${sub.id}')" title="Delete">‚úï</button>
+                    <button class="subtask-delete" onclick="deleteSubtask('${task.id}', '${sub.id}')" title="Delete">??/button>
                 </div>
             `).join('');
         }
@@ -5687,7 +5684,7 @@ Output the consolidated content in clean Markdown format:`;
                 subtask.title = newTitle;
                 renderSubtasks(task);
                 // AUTO-SAVE
-                debouncedAutoSave(`Rename subtask "${oldTitle}" ‚Üí "${newTitle}"`);
+                debouncedAutoSave(`Rename subtask "${oldTitle}" ??"${newTitle}"`);
             } else {
                 renderSubtasks(task);
             }
@@ -5706,8 +5703,8 @@ Output the consolidated content in clean Markdown format:`;
                         <span class="comment-author">${c.author}</span>
                         <span class="comment-time">${formatTimeAgo(c.createdAt)}</span>
                         <span class="comment-actions">
-                            <button class="comment-action-btn" onclick="editComment('${task.id}', ${idx})" title="Edit">‚úèÔ∏è</button>
-                            <button class="comment-action-btn" onclick="deleteComment('${task.id}', ${idx})" title="Delete">üóëÔ∏è</button>
+                            <button class="comment-action-btn" onclick="editComment('${task.id}', ${idx})" title="Edit">?èÔ?</button>
+                            <button class="comment-action-btn" onclick="deleteComment('${task.id}', ${idx})" title="Delete">??Ô∏?/button>
                         </span>
                     </div>
                     <div class="comment-text" id="comment-text-${idx}">${renderMarkdown(c.text)}</div>
@@ -5820,8 +5817,8 @@ Output the consolidated content in clean Markdown format:`;
                 <div class="learning-item ${l.status || 'pending'}">
                     <div class="learning-category">
                         <span class="learning-category-badge ${l.category || 'fact'}">${l.category || 'fact'}</span>
-                        ${l.status === 'accepted' ? '<span style="color: var(--accent-green); font-size: 0.75rem;">‚úì Saved</span>' : ''}
-                        ${l.status === 'rejected' ? '<span style="color: var(--accent-red); font-size: 0.75rem;">‚úï Rejected</span>' : ''}
+                        ${l.status === 'accepted' ? '<span style="color: var(--accent-green); font-size: 0.75rem;">??Saved</span>' : ''}
+                        ${l.status === 'rejected' ? '<span style="color: var(--accent-red); font-size: 0.75rem;">??Rejected</span>' : ''}
                     </div>
                     <div class="learning-text">${escapeHtml(l.text)}</div>
                     ${l.tags && l.tags.length > 0 ? `
@@ -5831,9 +5828,9 @@ Output the consolidated content in clean Markdown format:`;
                     ` : ''}
                     ${l.status !== 'accepted' && l.status !== 'rejected' ? `
                         <div class="learning-actions">
-                            <button class="learning-action-btn accept" onclick="acceptLearning('${task.id}', ${idx})">‚úì Accept</button>
-                            <button class="learning-action-btn edit" onclick="editLearning('${task.id}', ${idx})">‚úèÔ∏è Edit</button>
-                            <button class="learning-action-btn reject" onclick="rejectLearning('${task.id}', ${idx})">‚úï Reject</button>
+                            <button class="learning-action-btn accept" onclick="acceptLearning('${task.id}', ${idx})">??Accept</button>
+                            <button class="learning-action-btn edit" onclick="editLearning('${task.id}', ${idx})">?èÔ? Edit</button>
+                            <button class="learning-action-btn reject" onclick="rejectLearning('${task.id}', ${idx})">??Reject</button>
                         </div>
                     ` : ''}
                 </div>
@@ -5906,7 +5903,7 @@ Output the consolidated content in clean Markdown format:`;
                 }
                 
                 console.log(`Auto-extracted ${learnings.length} learnings for: ${task.title}`);
-                showToast('info', `üß† ${learnings.length} learnings extracted`);
+                showToast('info', `?? ${learnings.length} learnings extracted`);
                 
             } catch (error) {
                 console.error('Auto-extract learnings failed:', error);
@@ -6017,10 +6014,10 @@ Respond with JSON array only:
                 }
             }
             
-            // Also extract explicit learnings marked with üß† or "Learning:" / "Merke:"
-            const learningMarkers = text.match(/(?:üß†|learning:|lesson:|takeaway:|lernen:|merke:|notiz:)\s*([^\n]+)/gi) || [];
+            // Also extract explicit learnings marked with ?? or "Learning:" / "Merke:"
+            const learningMarkers = text.match(/(?:??|learning:|lesson:|takeaway:|lernen:|merke:|notiz:)\s*([^\n]+)/gi) || [];
             for (const marker of learningMarkers) {
-                const cleanText = marker.replace(/(?:üß†|learning:|lesson:|takeaway:|lernen:|merke:|notiz:)\s*/i, '').trim();
+                const cleanText = marker.replace(/(?:??|learning:|lesson:|takeaway:|lernen:|merke:|notiz:)\s*/i, '').trim();
                 if (cleanText.length > 10) {
                     learnings.push({
                         text: cleanText,
@@ -6129,7 +6126,7 @@ Respond with JSON array only:
             // Format the learning entry
             const entry = `
 ### Learning from: ${task.title}
-_${learning.category} ‚Ä¢ ${new Date().toLocaleString('de-DE')}_
+_${learning.category} ??${new Date().toLocaleString('de-DE')}_
 
 ${learning.text}
 
@@ -6187,7 +6184,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     renderSubtasks(task);
                     renderTasks();
                     // AUTO-SAVE mit Debounce
-                    debouncedAutoSave(`${subtask.done ? '‚úì' : '‚óã'} "${subtask.title}" in "${task.title}"`);
+                    debouncedAutoSave(`${subtask.done ? '?? : '??} "${subtask.title}" in "${task.title}"`);
                 }
             }
         }
@@ -6248,12 +6245,12 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 renderComments(task);
                 input.value = '';
 
-                // AUTO-MOVE: Review ‚Üí In Progress when comment is added (signals rework needed)
+                // AUTO-MOVE: Review ??In Progress when comment is added (signals rework needed)
                 let commitMsg;
                 const wasReview = task.status === 'review';
                 if (wasReview) {
                     task.status = 'in_progress';
-                    commitMsg = `üí¨ Rework "${task.title}": ${text.substring(0, 50)}${text.length > 50 ? '...' : ''} (review ‚Üí in_progress)`;
+                    commitMsg = `?í¨ Rework "${task.title}": ${text.substring(0, 50)}${text.length > 50 ? '...' : ''} (review ??in_progress)`;
                 } else {
                     commitMsg = `Comment on "${task.title}": ${text.substring(0, 50)}${text.length > 50 ? '...' : ''}`;
                 }
@@ -6262,7 +6259,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 const success = await saveTasksToGitHub(commitMsg, true); // forceOverwrite=true to skip conflict dialog
                 if (success) {
                     if (wasReview) {
-                        showToast('info', 'üîÑ Task moved to In Progress for rework');
+                        showToast('info', '?? Task moved to In Progress for rework');
                     }
                     renderAll();
                 } else {
@@ -6271,7 +6268,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     task.comments = originalComments;
                     renderComments(task);
                     renderAll();
-                    showToast('error', '‚ùå Could not save comment - changes reverted');
+                    showToast('error', '??Could not save comment - changes reverted');
                 }
             }
         }
@@ -6439,7 +6436,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 gatewayInput.value = currentUrl || '';
             }
             if (gatewayStatus) {
-                gatewayStatus.textContent = currentUrl ? '‚úÖ Connected' : '‚ö†Ô∏è Not connected';
+                gatewayStatus.textContent = currentUrl ? '??Connected' : '?†Ô? Not connected';
                 gatewayStatus.style.color = currentUrl ? 'var(--accent-green)' : 'var(--text-secondary)';
             }
             // Show current session key (legacy)
@@ -6450,7 +6447,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 sessionInput.value = currentSession || '';
             }
             if (sessionStatus) {
-                sessionStatus.textContent = currentSession ? '‚úÖ Configured' : '‚ö†Ô∏è Not set';
+                sessionStatus.textContent = currentSession ? '??Configured' : '?†Ô? Not set';
                 sessionStatus.style.color = currentSession ? 'var(--accent-green)' : 'var(--text-secondary)';
             }
             // Show current hooks token
@@ -6461,7 +6458,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 hooksInput.value = currentHooksToken || '';
             }
             if (hooksStatus) {
-                hooksStatus.textContent = currentHooksToken ? '‚úÖ Token configured' : '‚ö†Ô∏è Not set (using fallback)';
+                hooksStatus.textContent = currentHooksToken ? '??Token configured' : '?†Ô? Not set (using fallback)';
                 hooksStatus.style.color = currentHooksToken ? 'var(--accent-green)' : 'var(--text-secondary)';
             }
             document.getElementById('settings-modal').classList.add('visible');
@@ -6478,12 +6475,12 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             
             if (!url) {
                 setGatewayUrl(null);
-                status.textContent = '‚ö†Ô∏è Disconnected';
+                status.textContent = '?†Ô? Disconnected';
                 status.style.color = 'var(--text-secondary)';
                 return;
             }
             
-            status.textContent = 'üîÑ Testing connection...';
+            status.textContent = '?? Testing connection...';
             status.style.color = 'var(--text-secondary)';
             
             try {
@@ -6493,17 +6490,17 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 });
                 if (response.ok) {
                     setGatewayUrl(url);
-                    status.textContent = '‚úÖ Connected!';
+                    status.textContent = '??Connected!';
                     status.style.color = 'var(--accent-green)';
                     showToast('success', 'Gateway connected');
                 } else {
-                    status.textContent = '‚ùå Connection failed (bad response)';
+                    status.textContent = '??Connection failed (bad response)';
                     status.style.color = 'var(--accent-red)';
                 }
             } catch (err) {
                 // Try anyway - might just not have /health endpoint
                 setGatewayUrl(url);
-                status.textContent = '‚ö†Ô∏è Saved (could not verify)';
+                status.textContent = '?†Ô? Saved (could not verify)';
                 status.style.color = 'var(--accent-yellow)';
                 showToast('info', 'Gateway URL saved');
             }
@@ -6522,12 +6519,12 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             
             if (!token) {
                 setHooksToken(null);
-                status.textContent = '‚ö†Ô∏è Token cleared';
+                status.textContent = '?†Ô? Token cleared';
                 status.style.color = 'var(--text-secondary)';
                 return;
             }
             
-            status.textContent = 'üîÑ Testing connection...';
+            status.textContent = '?? Testing connection...';
             status.style.color = 'var(--text-secondary)';
             
             try {
@@ -6536,17 +6533,17 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 
                 if (response.ok && data.ok) {
                     setHooksToken(token);
-                    status.textContent = '‚úÖ Token valid! Live thinking enabled.';
+                    status.textContent = '??Token valid! Live thinking enabled.';
                     status.style.color = 'var(--accent-green)';
                     showToast('success', 'Live thinking enabled');
                 } else {
-                    status.textContent = '‚ùå Invalid token: ' + (data.error || 'Unknown error');
+                    status.textContent = '??Invalid token: ' + (data.error || 'Unknown error');
                     status.style.color = 'var(--accent-red)';
                 }
             } catch (err) {
                 // Network error - save anyway, might work later
                 setHooksToken(token);
-                status.textContent = '‚ö†Ô∏è Saved (could not verify - API may be offline)';
+                status.textContent = '?†Ô? Saved (could not verify - API may be offline)';
                 status.style.color = 'var(--accent-yellow)';
                 showToast('info', 'Token saved');
             }
@@ -6583,14 +6580,14 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             
             if (!key) {
                 setSessionKey(null);
-                status.textContent = '‚ö†Ô∏è No session key configured';
+                status.textContent = '?†Ô? No session key configured';
                 status.style.color = 'var(--text-secondary)';
                 stopThinkingPolling();
                 return;
             }
             
             setSessionKey(key);
-            status.textContent = '‚úÖ Session key saved';
+            status.textContent = '??Session key saved';
             status.style.color = 'var(--accent-green)';
             showToast('success', 'Session key saved');
         }
@@ -6652,7 +6649,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             }
         }
         
-        // Fallback: Extract thinking from task comments (prefix: "üí≠ Thinking:")
+        // Fallback: Extract thinking from task comments (prefix: "?í≠ Thinking:")
         function fetchThinkingFromComments(taskId) {
             const task = STATE.tasks.find(t => t.id === taskId);
             if (!task || !task.comments) {
@@ -6662,11 +6659,11 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             const thinkingBlocks = [];
             for (const comment of task.comments) {
                 const content = comment.content || comment.text || '';
-                if (content.includes('üí≠ Thinking:') || content.startsWith('üí≠')) {
+                if (content.includes('?í≠ Thinking:') || content.startsWith('?í≠')) {
                     let text = content;
-                    if (content.includes('üí≠ Thinking:')) {
-                        text = content.split('üí≠ Thinking:').slice(1).join('üí≠ Thinking:').trim();
-                    } else if (content.startsWith('üí≠')) {
+                    if (content.includes('?í≠ Thinking:')) {
+                        text = content.split('?í≠ Thinking:').slice(1).join('?í≠ Thinking:').trim();
+                    } else if (content.startsWith('?í≠')) {
                         text = content.substring(1).trim();
                     }
                     
@@ -6767,7 +6764,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 const date = new Date(comment.createdAt).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
                 const author = comment.author || 'Agent';
                 const preview = content.length > 300 ? content.substring(0, 300) + '...' : content;
-                const isThinking = content.includes('üí≠') || content.toLowerCase().includes('thinking');
+                const isThinking = content.includes('?í≠') || content.toLowerCase().includes('thinking');
                 const isNew = !seenCommentIds.has(comment.id);
                 const thinkingClass = isThinking ? ' is-thinking' : '';
                 // Only add 'new' class for truly new comments (not seen before)
@@ -6814,8 +6811,8 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     <span class="project-name">${p.name}</span>
                     <span class="project-id">${p.id}</span>
                     <div class="project-actions">
-                        <button onclick="editProject('${p.id}')" title="Edit">‚úèÔ∏è</button>
-                        <button onclick="deleteProject('${p.id}')" title="Delete">üóëÔ∏è</button>
+                        <button onclick="editProject('${p.id}')" title="Edit">?èÔ?</button>
+                        <button onclick="deleteProject('${p.id}')" title="Delete">??Ô∏?/button>
                     </div>
                 </div>
             `).join('');
@@ -6829,7 +6826,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
         function saveProject() {
             const id = document.getElementById('new-project-id').value.trim().toLowerCase().replace(/\s+/g, '-');
             const name = document.getElementById('new-project-name').value.trim();
-            const icon = document.getElementById('new-project-icon').value.trim() || 'üìÅ';
+            const icon = document.getElementById('new-project-icon').value.trim() || '??';
             const color = document.getElementById('new-project-color').value;
 
             if (!id || !name) {
@@ -6882,7 +6879,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
 
             // Update UI
             document.getElementById('project-form-title').textContent = `Edit Project: ${project.name}`;
-            document.getElementById('btn-save-project').textContent = 'üíæ Save Changes';
+            document.getElementById('btn-save-project').textContent = '?íæ Save Changes';
             document.getElementById('btn-cancel-project').style.display = 'block';
 
             // Clear emoji selection
@@ -7002,11 +6999,11 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
 
             let html = '<strong>Changes to commit:</strong><br>';
             if (diff > 0) {
-                html += `‚Ä¢ Added ${diff} new task(s)<br>`;
+                html += `??Added ${diff} new task(s)<br>`;
             } else if (diff < 0) {
-                html += `‚Ä¢ Deleted ${Math.abs(diff)} task(s)<br>`;
+                html += `??Deleted ${Math.abs(diff)} task(s)<br>`;
             }
-            html += `‚Ä¢ Total tasks: ${current}`;
+            html += `??Total tasks: ${current}`;
 
             return html;
         }
@@ -7035,7 +7032,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             const icon = document.getElementById('activity-toggle-icon');
             const reopen = document.getElementById('activity-reopen');
             const isCollapsed = sidebar.classList.toggle('collapsed');
-            icon.textContent = isCollapsed ? '‚ò∞' : '‚úï';
+            icon.textContent = isCollapsed ? '?? : '??;
             reopen.style.display = isCollapsed ? 'flex' : 'none';
             localStorage.setItem('activity-collapsed', isCollapsed);
         }
@@ -7086,7 +7083,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     STATE.originalData = JSON.parse(JSON.stringify(newData));
                     STATE.fileSha = fileData.sha;
                     renderAll();
-                    showToast('success', 'üîÑ Dashboard updated');
+                    showToast('success', '?? Dashboard updated');
                 }
                 lastDataHash = newHash;
                 lastPollTime = Date.now();
@@ -7144,13 +7141,13 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         <div class="template-description">${template.description || ''}</div>
                         <div class="template-meta">
                             <span class="execution-count" title="Times executed">
-                                ‚ñ∂ ${execCount}x
+                                ??${execCount}x
                             </span>
                             ${template.tags ? template.tags.map(t => `<span class="task-tag ${t}">${t}</span>`).join('') : ''}
                         </div>
                         <div class="template-actions" onclick="event.stopPropagation()">
-                            <button class="template-action-btn run" onclick="executeTemplate('${template.id}')" title="Run template">‚ñ∂ Run</button>
-                            <button class="template-action-btn" onclick="duplicateTemplate('${template.id}')" title="Duplicate">üìã Copy</button>
+                            <button class="template-action-btn run" onclick="executeTemplate('${template.id}')" title="Run template">??Run</button>
+                            <button class="template-action-btn" onclick="duplicateTemplate('${template.id}')" title="Duplicate">?? Copy</button>
                         </div>
                     </div>
                 `;
@@ -7166,7 +7163,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             currentEditingTaskId = null;
             isEditingTemplate = true;
             
-            document.getElementById('task-modal-title').textContent = 'üìë New Template';
+            document.getElementById('task-modal-title').textContent = '?? New Template';
             document.getElementById('task-title').value = '';
             document.getElementById('task-description').value = '';
             document.getElementById('task-status').value = 'backlog';
@@ -7202,7 +7199,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             currentEditingTaskId = templateId;
             isEditingTemplate = true;
             
-            document.getElementById('task-modal-title').textContent = 'üìë Edit Template';
+            document.getElementById('task-modal-title').textContent = '?? Edit Template';
             document.getElementById('task-title').value = template.title;
             document.getElementById('task-description').value = template.description;
             document.getElementById('task-status').value = template.baseStatus || 'backlog';
@@ -7326,7 +7323,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 400px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">‚úÖ Task Completed</h2>
+                        <h2 class="modal-title">??Task Completed</h2>
                         <button class="modal-close" onclick="closeTemplateDialog()">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -7334,10 +7331,10 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     </div>
                     <div class="modal-footer" style="flex-direction: column; gap: 0.5rem;">
                         <button class="btn btn-primary" style="width: 100%;" onclick="executeOnlyFromDialog('${taskId}')">
-                            ‚ñ∂ Just Execute (stays available)
+                            ??Just Execute (stays available)
                         </button>
                         <button class="btn btn-secondary" style="width: 100%;" onclick="archiveFromDialog('${taskId}')">
-                            üì¶ Archive Task
+                            ?ì¶ Archive Task
                         </button>
                     </div>
                 </div>
@@ -7410,7 +7407,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         <div class="scheduled-name">${task.title}</div>
                         <div class="scheduled-time">
                             <span class="countdown ${isOverdue ? 'overdue' : ''}">
-                                ${isOverdue ? '‚ö†Ô∏è Overdue' : '‚è∞ ' + countdown}
+                                ${isOverdue ? '?†Ô? Overdue' : '??' + countdown}
                             </span>
                         </div>
                         <div class="task-description">${task.description || ''}</div>
@@ -7481,7 +7478,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 500px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">üìÖ Schedule Task</h2>
+                        <h2 class="modal-title">?? Schedule Task</h2>
                         <button class="modal-close" onclick="closeScheduledTaskDialog()">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -7630,7 +7627,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 450px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">üìÖ Schedule Task</h2>
+                        <h2 class="modal-title">?? Schedule Task</h2>
                         <button class="modal-close" onclick="closeScheduleExistingTaskDialog()">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -7647,7 +7644,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" onclick="closeScheduleExistingTaskDialog()">Cancel</button>
-                        <button class="btn btn-primary" onclick="confirmScheduleTask('${task.id}')">üìÖ Schedule</button>
+                        <button class="btn btn-primary" onclick="confirmScheduleTask('${task.id}')">?? Schedule</button>
                     </div>
                 </div>
             `;
@@ -7680,7 +7677,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             renderScheduledTasks();
             
             debouncedAutoSave(`Schedule "${task.title}" for ${new Date(datetime).toLocaleString()}`);
-            showToast('success', `üìÖ Scheduled for ${new Date(datetime).toLocaleString()}`);
+            showToast('success', `?? Scheduled for ${new Date(datetime).toLocaleString()}`);
         }
 
         // === TASK 1: CRON DRAG & DROP ===
@@ -7844,7 +7841,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             renderTasksSmooth(oldStatus, newStatus, task.id);
 
             const action = statusChanged
-                ? `Move "${task.title}" ‚Üí ${newStatus}`
+                ? `Move "${task.title}" ??${newStatus}`
                 : `Reorder "${task.title}"`;
             debouncedAutoSave(action);
 
@@ -7857,7 +7854,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             const taskId = `cron_exec_${cron.id}_${Date.now()}`;
             const task = {
                 id: taskId,
-                title: `üöÄ ${cron.name}`,
+                title: `?? ${cron.name}`,
                 description: `Executing cron job...\n\nSchedule: ${cron.scheduleHuman || cron.schedule}`,
                 status: 'in_progress',
                 tags: ['cron-execution'],
@@ -7906,7 +7903,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 // Update task to show it's queued
                 const task = STATE.data.tasks.find(t => t.id === tempTaskId);
                 if (task) {
-                    task.title = `‚è≥ ${cron.name}`;
+                    task.title = `??${cron.name}`;
                     task.description = `Queued for execution (Gateway offline)\n\nWill run on next sync.`;
                     task.processing = false;
                     renderTasks();
@@ -7915,7 +7912,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 // Save to GitHub so sync-crons.sh can pick it up
                 const saved = await saveCronsToGitHub(`Queue "${cron.name}" for execution`);
                 if (saved) {
-                    showToast('warning', `‚è≥ "${cron.name}" queued - will run on next sync`, 5000);
+                    showToast('warning', `??"${cron.name}" queued - will run on next sync`, 5000);
                 } else {
                     showToast('error', `Gateway offline - cannot execute cron`, 5000);
                     delete cron.pendingExecution;
@@ -7925,7 +7922,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 return;
             }
             
-            showToast('info', `üöÄ Executing "${cron.name}"...`);
+            showToast('info', `?? Executing "${cron.name}"...`);
             
             try {
                 // Call Gateway API to execute cron
@@ -7935,7 +7932,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 });
                 
                 if (response.ok) {
-                    showToast('success', `‚úì Cron "${cron.name}" started`);
+                    showToast('success', `??Cron "${cron.name}" started`);
                     // Start polling for status
                     pollCronStatus(cronId);
                 } else {
@@ -7950,13 +7947,13 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 // Update task to show it's queued
                 const task = STATE.data.tasks.find(t => t.id === tempTaskId);
                 if (task) {
-                    task.title = `‚è≥ ${cron.name}`;
+                    task.title = `??${cron.name}`;
                     task.description = `Queued for execution (Gateway offline)\n\nWill run on next sync.`;
                     task.processing = false;
                     renderTasks();
                 }
                 
-                showToast('warning', `‚è≥ Gateway offline - "${cron.name}" queued for next sync`, 5000);
+                showToast('warning', `??Gateway offline - "${cron.name}" queued for next sync`, 5000);
                 await saveCronsToGitHub(`Queue "${cron.name}" for execution (gateway offline)`);
             }
         }
@@ -7977,7 +7974,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     if (cron && cron.lastStatus === 'ok') {
                         clearInterval(cronPollingIntervals[cronId]);
                         delete cronPollingIntervals[cronId];
-                        showToast('success', `‚úÖ Cron "${cron.name}" completed`);
+                        showToast('success', `??Cron "${cron.name}" completed`);
                         // Remove temporary task from In Progress
                         removeCronExecutionTask(cronId);
                         renderCrons();
@@ -8044,12 +8041,12 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 500px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">üìÖ Convert to Scheduled Task</h2>
+                        <h2 class="modal-title">?? Convert to Scheduled Task</h2>
                         <button class="modal-close" onclick="closeCronToScheduledDialog()">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="cron-info" style="background: var(--bg-tertiary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="font-weight: 600; margin-bottom: 0.5rem;">${cron.emoji || 'üîÑ'} ${escapeHtml(cron.name)}</div>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">${cron.emoji || '??'} ${escapeHtml(cron.name)}</div>
                             <div style="font-size: 0.875rem; color: var(--text-secondary);">${escapeHtml(cron.humanSchedule || cron.schedule || '')}</div>
                         </div>
                         <div class="form-group">
@@ -8132,7 +8129,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         // Create task in Scheduled column for UI visibility
                         const scheduledTask = {
                             id: 'cron_scheduled_' + (newCronData.id || Date.now()),
-                            title: (cron.emoji || 'üîÑ') + ' ' + cron.name,
+                            title: (cron.emoji || '??') + ' ' + cron.name,
                             description: `Converted from recurring cron job.\n\nOriginal schedule: ${cron.humanSchedule || cron.schedule || 'N/A'}\n\nThis will run once at the scheduled time.`,
                             status: 'scheduled',
                             scheduledAt: scheduledAt,
@@ -8150,7 +8147,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         debouncedAutoSave(`Convert cron "${cron.name}" to scheduled task`);
                         
                         closeCronToScheduledDialog();
-                        showToast('success', `üìÖ Scheduled for ${new Date(scheduledAt).toLocaleString()}`);
+                        showToast('success', `?? Scheduled for ${new Date(scheduledAt).toLocaleString()}`);
                     } else {
                         showToast('error', 'Failed to create scheduled task');
                     }
@@ -8162,8 +8159,8 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 // Fallback: Create scheduled task locally (will sync when Gateway is available)
                 const scheduledTask = {
                     id: 'cron_scheduled_' + Date.now(),
-                    title: (cron.emoji || 'üîÑ') + ' ' + cron.name,
-                    description: `Converted from recurring cron job.\n\nOriginal schedule: ${cron.humanSchedule || cron.schedule || 'N/A'}\n\n‚ö†Ô∏è Gateway offline - will be synced when available.`,
+                    title: (cron.emoji || '??') + ' ' + cron.name,
+                    description: `Converted from recurring cron job.\n\nOriginal schedule: ${cron.humanSchedule || cron.schedule || 'N/A'}\n\n?†Ô? Gateway offline - will be synced when available.`,
                     status: 'scheduled',
                     scheduledAt: scheduledAt,
                     priority: 'medium',
@@ -8187,7 +8184,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 debouncedAutoSave(`Convert cron "${cron.name}" to scheduled task (offline)`);
                 
                 closeCronToScheduledDialog();
-                showToast('warning', `üìÖ Scheduled locally - Gateway offline, will sync when available`, 5000);
+                showToast('warning', `?? Scheduled locally - Gateway offline, will sync when available`, 5000);
             }
         }
 
@@ -8205,7 +8202,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 550px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">üîÑ Edit Cron Job</h2>
+                        <h2 class="modal-title">?? Edit Cron Job</h2>
                         <button class="modal-close" onclick="closeCronEditor()">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -8220,10 +8217,10 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         <div class="form-group">
                             <label class="form-label">Schedule</label>
                             <div id="cron-schedule-picker" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 0.75rem;">
-                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="daily" onclick="setCronScheduleType('daily')">üìÖ Daily</button>
-                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="weekly" onclick="setCronScheduleType('weekly')">üìÜ Weekly</button>
-                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="monthly" onclick="setCronScheduleType('monthly')">üóìÔ∏è Monthly</button>
-                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="custom" onclick="setCronScheduleType('custom')">‚öôÔ∏è Custom</button>
+                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="daily" onclick="setCronScheduleType('daily')">?? Daily</button>
+                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="weekly" onclick="setCronScheduleType('weekly')">?? Weekly</button>
+                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="monthly" onclick="setCronScheduleType('monthly')">??Ô∏?Monthly</button>
+                                <button type="button" class="btn btn-secondary cron-type-btn" data-type="custom" onclick="setCronScheduleType('custom')">?ôÔ? Custom</button>
                             </div>
                             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
                                 <div id="cron-time-group" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -8268,7 +8265,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         <div class="form-group">
                             <label class="form-label">Project</label>
                             <select class="form-input" id="cron-project">
-                                <option value="">‚Äî No Project ‚Äî</option>
+                                <option value="">??No Project ??/option>
                                 ${(STATE.data?.projects || []).map(p => 
                                     `<option value="${p.id}" ${cron.project === p.id ? 'selected' : ''}>${p.icon || ''} ${p.name}</option>`
                                 ).join('')}
@@ -8289,14 +8286,14 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                             </label>
                         </div>
                         <div class="form-group" style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
-                            <label class="form-label" style="margin-bottom: 0.5rem;">üìÖ Next Run</label>
+                            <label class="form-label" style="margin-bottom: 0.5rem;">?? Next Run</label>
                             <div id="cron-next-runs" style="font-size: 0.85rem; color: var(--text-secondary);">
                                 ${generateNextRuns(cron.schedule, cron.timezone)}
                             </div>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-secondary btn-small" onclick="toggleCronHistory('${cronId}')" style="width: 100%;">
-                                üìã Run History
+                                ?? Run History
                             </button>
                             <div id="cron-history" style="display: none; margin-top: 0.75rem; background: var(--bg-secondary); padding: 1rem; border-radius: 8px; max-height: 300px; overflow-y: auto;">
                                 <div id="cron-history-content" style="font-size: 0.85rem;">Loading...</div>
@@ -8304,9 +8301,9 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" style="margin-right: auto;" onclick="convertCronToTask('${cronId}')">üìã As Task</button>
-                        <button class="btn btn-secondary btn-small" onclick="duplicateCronJob('${cronId}')" title="Duplicate this cron job">üìÑ Duplicate</button>
-                        <button class="btn btn-danger btn-small" onclick="deleteCronJob('${cronId}')" title="Delete this cron job">üóëÔ∏è Delete</button>
+                        <button class="btn btn-secondary" style="margin-right: auto;" onclick="convertCronToTask('${cronId}')">?? As Task</button>
+                        <button class="btn btn-secondary btn-small" onclick="duplicateCronJob('${cronId}')" title="Duplicate this cron job">?? Duplicate</button>
+                        <button class="btn btn-danger btn-small" onclick="deleteCronJob('${cronId}')" title="Delete this cron job">??Ô∏?Delete</button>
                         <button class="btn btn-secondary" onclick="closeCronEditor()">Cancel</button>
                         <button class="btn btn-primary" onclick="saveCronChanges('${cronId}')">Save Changes</button>
                     </div>
@@ -8530,7 +8527,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 } else {
                     contentDiv.innerHTML = runs.slice(0, 10).map(run => {
                         const date = new Date(run.ts || run.runAtMs);
-                        const statusIcon = run.status === 'ok' ? '‚úÖ' : '‚ùå';
+                        const statusIcon = run.status === 'ok' ? '?? : '??;
                         const duration = run.durationMs ? `${(run.durationMs / 1000).toFixed(1)}s` : '-';
                         const dateStr = date.toLocaleString('de-DE', { 
                             day: '2-digit', month: '2-digit', year: '2-digit',
@@ -8897,7 +8894,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             }
         }
 
-        // === TASK 3: TASK ‚Üí CRON ===
+        // === TASK 3: TASK ??CRON ===
         function openTaskToCronWizard(taskId) {
             const task = STATE.data.tasks.find(t => t.id === taskId);
             if (!task) return;
@@ -8908,7 +8905,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 500px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">‚è∞ Convert to Cron</h2>
+                        <h2 class="modal-title">??Convert to Cron</h2>
                         <button class="modal-close" onclick="closeTaskToCronWizard()">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -8924,16 +8921,16 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                         <div id="wizard-step-1">
                             <div style="display: grid; gap: 0.5rem;">
                                 <button class="btn btn-secondary" style="justify-content: flex-start;" onclick="setScheduleType('daily')">
-                                    üìÖ Daily
+                                    ?? Daily
                                 </button>
                                 <button class="btn btn-secondary" style="justify-content: flex-start;" onclick="setScheduleType('weekly')">
-                                    üìÜ Weekly
+                                    ?? Weekly
                                 </button>
                                 <button class="btn btn-secondary" style="justify-content: flex-start;" onclick="setScheduleType('monthly')">
-                                    üóìÔ∏è Monthly
+                                    ??Ô∏?Monthly
                                 </button>
                                 <button class="btn btn-secondary" style="justify-content: flex-start;" onclick="setScheduleType('custom')">
-                                    ‚öôÔ∏è Custom Cron Expression
+                                    ?ôÔ? Custom Cron Expression
                                 </button>
                             </div>
                         </div>
@@ -9113,7 +9110,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 debouncedAutoSave(`Convert task "${task.title}" to cron`);
                 
                 if (cronsSaved) {
-                    showToast('success', `‚úì Cron "${cronTitle}" saved (will activate on next sync)`);
+                    showToast('success', `??Cron "${cronTitle}" saved (will activate on next sync)`);
                 } else {
                     showToast('warning', `Cron created locally but failed to save to GitHub`);
                 }
@@ -9171,7 +9168,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             delete window.wizardState;
         }
 
-        // === TASK 4: CRON ‚Üí TASK ===
+        // === TASK 4: CRON ??TASK ===
         function convertCronToTask(cronId) {
             const cron = STATE.crons?.find(c => c.id === cronId);
             if (!cron) return;
@@ -9182,7 +9179,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             dialog.innerHTML = `
                 <div class="modal" style="max-width: 400px;">
                     <div class="modal-header">
-                        <h2 class="modal-title">üìã Convert to Task</h2>
+                        <h2 class="modal-title">?? Convert to Task</h2>
                         <button class="modal-close" onclick="closeCronToTaskDialog()">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -9288,7 +9285,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
             if (!token) {
                 container.innerHTML = `
                     <div class="people-empty">
-                        <div class="people-empty-icon">üîí</div>
+                        <div class="people-empty-icon">??</div>
                         <p>Connect to GitHub to see team members</p>
                     </div>
                 `;
@@ -9316,7 +9313,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 if (collaborators.length === 0) {
                     container.innerHTML = `
                         <div class="people-empty">
-                            <div class="people-empty-icon">üë§</div>
+                            <div class="people-empty-icon">?ë§</div>
                             <p>No collaborators found</p>
                         </div>
                     `;
@@ -9341,12 +9338,12 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     const role = c.role_name?.toLowerCase() || 'read';
                     const roleLabel = role.charAt(0).toUpperCase() + role.slice(1);
                     const roleIcon = {
-                        admin: 'üëë',
-                        maintain: 'üîß',
-                        write: '‚úèÔ∏è',
-                        triage: 'üìã',
-                        read: 'üëÅÔ∏è'
-                    }[role] || 'üë§';
+                        admin: '??',
+                        maintain: '?îß',
+                        write: '?èÔ?',
+                        triage: '??',
+                        read: '??Ô∏?
+                    }[role] || '?ë§';
 
                     return `
                         <div class="collaborator-card">
@@ -9368,7 +9365,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 console.error('Failed to load collaborators:', error);
                 container.innerHTML = `
                     <div class="people-empty">
-                        <div class="people-empty-icon">‚ö†Ô∏è</div>
+                        <div class="people-empty-icon">?†Ô?</div>
                         <p>Failed to load collaborators</p>
                         <p style="font-size: 0.875rem; margin-top: 0.5rem;">${error.message}</p>
                     </div>
@@ -9426,7 +9423,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                 const icon = document.getElementById('activity-toggle-icon');
                 const reopen = document.getElementById('activity-reopen');
                 if (sidebar) sidebar.classList.add('collapsed');
-                if (icon) icon.textContent = '‚ò∞';
+                if (icon) icon.textContent = '??;
                 if (reopen) reopen.style.display = 'flex';
             }
             // Auth is now handled by checkAuth() in the login script below
@@ -9460,7 +9457,7 @@ ${learning.tags.map(t => `#${t}`).join(' ')}
                     try {
                         await loadCronsFromGitHub();
                         renderCrons();
-                        console.log('üîÑ Auto-refreshed cron data from GitHub');
+                        console.log('?? Auto-refreshed cron data from GitHub');
                     } catch (e) {
                         console.warn('Auto-refresh crons failed:', e);
                     }
