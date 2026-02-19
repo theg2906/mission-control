@@ -117,7 +117,7 @@
     "id": "task_006",
     "title": "Test Task from Dashboard",
     "description": "Checking if creation works",
-    "status": "backlog",
+    "status": "in_progress",
     "subtasks": [],
     "assignee": "agent",
     "priority": "medium",
