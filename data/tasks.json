@@ -12,7 +12,7 @@
     "id": "task_002",
     "title": "Implement Drag & Drop for Tasks",
     "description": "Allow users to move tasks between columns (Backlog -> In Progress -> Review -> Done) using HTML5 Drag and Drop API.",
-    "status": "in_progress",
+    "status": "review",
     "subtasks": [
       {
         "id": "sub_002_1",
