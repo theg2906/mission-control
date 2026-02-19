@@ -42,7 +42,7 @@
     "id": "task_003",
     "title": "Add 'Create Task' UI",
     "description": "Implement a modal or form to allow creating new tasks directly from the dashboard.",
-    "status": "backlog",
+    "status": "review",
     "subtasks": [
       {
         "id": "sub_003_1",
