@@ -12,12 +12,28 @@
     "id": "task_002",
     "title": "Implement Drag & Drop for Tasks",
     "description": "Allow users to move tasks between columns (Backlog -> In Progress -> Review -> Done) using HTML5 Drag and Drop API.",
-    "status": "backlog",
+    "status": "in_progress",
     "subtasks": [
-      { "id": "sub_002_1", "title": "Add draggable attribute to cards", "done": false },
-      { "id": "sub_002_2", "title": "Handle dragstart, dragover, drop events", "done": false },
-      { "id": "sub_002_3", "title": "Update local state on drop", "done": false },
-      { "id": "sub_002_4", "title": "Sync changes to GitHub API", "done": false }
+      {
+        "id": "sub_002_1",
+        "title": "Add draggable attribute to cards",
+        "done": false
+      },
+      {
+        "id": "sub_002_2",
+        "title": "Handle dragstart, dragover, drop events",
+        "done": false
+      },
+      {
+        "id": "sub_002_3",
+        "title": "Update local state on drop",
+        "done": false
+      },
+      {
+        "id": "sub_002_4",
+        "title": "Sync changes to GitHub API",
+        "done": false
+      }
     ],
     "priority": "high",
     "comments": []
@@ -28,9 +44,21 @@
     "description": "Implement a modal or form to allow creating new tasks directly from the dashboard.",
     "status": "backlog",
     "subtasks": [
-      { "id": "sub_003_1", "title": "Design New Task Modal", "done": false },
-      { "id": "sub_003_2", "title": "Implement form validation", "done": false },
-      { "id": "sub_003_3", "title": "Push new task to local array and GitHub", "done": false }
+      {
+        "id": "sub_003_1",
+        "title": "Design New Task Modal",
+        "done": false
+      },
+      {
+        "id": "sub_003_2",
+        "title": "Implement form validation",
+        "done": false
+      },
+      {
+        "id": "sub_003_3",
+        "title": "Push new task to local array and GitHub",
+        "done": false
+      }
     ],
     "priority": "high",
     "comments": []
@@ -41,9 +69,21 @@
     "description": "Configure webhooks to trigger the local Agent when tasks are updated on the dashboard.",
     "status": "backlog",
     "subtasks": [
-      { "id": "sub_004_1", "title": "Configure GitHub Repo Webhook", "done": false },
-      { "id": "sub_004_2", "title": "Create backend script to receive payload", "done": false },
-      { "id": "sub_004_3", "title": "Implement task status change handler", "done": false }
+      {
+        "id": "sub_004_1",
+        "title": "Configure GitHub Repo Webhook",
+        "done": false
+      },
+      {
+        "id": "sub_004_2",
+        "title": "Create backend script to receive payload",
+        "done": false
+      },
+      {
+        "id": "sub_004_3",
+        "title": "Implement task status change handler",
+        "done": false
+      }
     ],
     "priority": "medium",
     "comments": []
@@ -54,9 +94,21 @@
     "description": "Enhance the visual design and support rich text in task descriptions.",
     "status": "backlog",
     "subtasks": [
-      { "id": "sub_005_1", "title": "Add loading spinners for API calls", "done": false },
-      { "id": "sub_005_2", "title": "Integrate Markdown renderer", "done": false },
-      { "id": "sub_005_3", "title": "Improve error handling messages", "done": false }
+      {
+        "id": "sub_005_1",
+        "title": "Add loading spinners for API calls",
+        "done": false
+      },
+      {
+        "id": "sub_005_2",
+        "title": "Integrate Markdown renderer",
+        "done": false
+      },
+      {
+        "id": "sub_005_3",
+        "title": "Improve error handling messages",
+        "done": false
+      }
     ],
     "priority": "low",
     "comments": []
