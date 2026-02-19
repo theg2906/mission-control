@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Control - theg2906</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rdsthomas/mission-control@main/css/styles.css">
-    <script>
-        // Force the dashboard to use the correct GitHub repo and branch
-        // This script runs before the app logic to ensure settings are locked
-        localStorage.setItem('gh-repo', 'theg2906/mission-control');
-        localStorage.setItem('gh-branch', 'master');
-        console.log("Mission Control: Configuration locked to theg2906/mission-control [master]");
-    </script>
+    <style>
+        /* Fallback styles in case CDN fails */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; }
+        .login-screen { display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-container { text-align: center; max-width: 400px; padding: 2rem; }
+        .login-input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: 1px solid #30363d; background: #0d1117; color: white; }
+        .login-btn { width: 100%; padding: 10px; background: #238636; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .dashboard { padding: 20px; display: flex; flex-direction: column; height: 100vh; box-sizing: border-box; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .kanban { display: flex; gap: 20px; overflow-x: auto; height: 100%; }
+        .column { flex: 1; min-width: 300px; background: #161b22; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; }
+        .column-header { font-weight: bold; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; }
+        .task-card { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px; margin-bottom: 10px; cursor: pointer; }
+        .task-title { font-weight: bold; margin-bottom: 5px; display: block; }
+        .task-desc { font-size: 0.9em; color: #8b949e; }
+        .task-meta { font-size: 0.8em; color: #8b949e; margin-top: 5px; }
+    </style>
 </head>
 <body>
     <div id="login-screen" class="login-screen">
         <div class="login-container">
-            <div class="login-logo">🎯</div>
+            <div class="login-logo" style="font-size: 48px; margin-bottom: 20px;">🎯</div>
             <h1 class="login-title">Mission Control</h1>
             <p class="login-subtitle">Task & Project Management Dashboard</p>
             <div class="login-card">
@@ -24,6 +34,7 @@
                 <div class="login-form">
                     <input type="password" id="login-token-input" class="login-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
                     <button id="login-btn" class="login-btn" onclick="handleLogin()">Connect with GitHub</button>
+                    <p id="login-error" style="color: #f85149; display: none; margin-top: 10px;"></p>
                 </div>
             </div>
         </div>
@@ -32,17 +43,14 @@
     <div id="dashboard" class="dashboard" style="display: none;">
         <header class="header">
             <div class="header-left">
-                <div class="logo">🎯 Mission Control</div>
+                <div class="logo" style="font-size: 20px; font-weight: bold;">🎯 Mission Control</div>
             </div>
             <div class="header-right">
-                <button class="btn btn-github" id="btn-connect">Connect GitHub</button>
-                <div class="user-profile" id="user-profile" style="display: none;">
-                    <img class="user-avatar" id="user-avatar" src="">
-                    <span class="user-name" id="user-name"></span>
-                </div>
+                <span id="user-display"></span>
+                <button onclick="logout()" style="background: none; border: 1px solid #30363d; color: #c9d1d9; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-left: 10px;">Logout</button>
             </div>
         </header>
-        <main class="main">
+        <main class="main" style="flex: 1; overflow: hidden;">
             <div class="kanban">
                 <div class="column" id="col-backlog">
                     <div class="column-header">📋 Backlog <span class="column-count" id="count-backlog">0</span></div>
@@ -64,7 +72,157 @@
         </main>
     </div>
 
-    <!-- Core App Logic from CDN -->
-    <script src="https://cdn.jsdelivr.net/gh/rdsthomas/mission-control@main/js/main.js"></script>
+    <script>
+        // Configuration
+        const REPO = 'theg2906/mission-control';
+        const BRANCH = 'master'; // or 'main' depending on your repo
+        const TASKS_PATH = 'data/tasks.json';
+
+        // State
+        let githubToken = localStorage.getItem('gh-token');
+        let tasks = [];
+
+        // Init
+        window.onload = function() {
+            if (githubToken) {
+                showDashboard();
+                fetchTasks();
+            }
+        };
+
+        // Login Handler
+        async function handleLogin() {
+            const tokenInput = document.getElementById('login-token-input');
+            const token = tokenInput.value.trim();
+            const errorMsg = document.getElementById('login-error');
+
+            if (!token) {
+                errorMsg.innerText = "Please enter a token";
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Verify token
+            try {
+                const user = await fetchGithubUser(token);
+                console.log("Logged in as:", user.login);
+                
+                localStorage.setItem('gh-token', token);
+                githubToken = token;
+                
+                showDashboard();
+                fetchTasks();
+            } catch (e) {
+                console.error(e);
+                errorMsg.innerText = "Invalid token or network error";
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('gh-token');
+            location.reload();
+        }
+
+        function showDashboard() {
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'flex';
+        }
+
+        // GitHub API
+        async function fetchGithubUser(token) {
+            const res = await fetch('https://api.github.com/user', {
+                headers: { 'Authorization': `token ${token}` }
+            });
+            if (!res.ok) throw new Error('Auth failed');
+            return await res.json();
+        }
+
+        async function fetchTasks() {
+            if (!githubToken) return;
+            
+            try {
+                // Fetch raw content from GitHub
+                // Note: Using raw.githubusercontent.com might have caching issues, 
+                // using API contents is better for real-time app
+                const url = `https://api.github.com/repos/${REPO}/contents/${TASKS_PATH}?ref=${BRANCH}`;
+                
+                const res = await fetch(url, {
+                    headers: { 
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3.raw' // Request raw content
+                    }
+                });
+
+                if (!res.ok) {
+                    if(res.status === 404) {
+                        console.warn("tasks.json not found, initializing empty");
+                        tasks = [];
+                        renderBoard();
+                        return;
+                    }
+                    throw new Error(`Failed to fetch tasks: ${res.status}`);
+                }
+
+                tasks = await res.json();
+                console.log("Tasks loaded:", tasks.length);
+                renderBoard();
+
+            } catch (e) {
+                console.error("Error fetching tasks:", e);
+                alert("Error loading tasks. Check console for details.");
+            }
+        }
+
+        // Rendering
+        function renderBoard() {
+            // Clear columns
+            ['backlog', 'in_progress', 'review', 'done'].forEach(status => {
+                document.getElementById(`tasks-${status}`).innerHTML = '';
+                document.getElementById(`count-${status}`).innerText = '0';
+            });
+
+            // Group tasks
+            const columns = {
+                'backlog': [],
+                'in_progress': [],
+                'review': [],
+                'done': []
+            };
+
+            tasks.forEach(task => {
+                // Default to backlog if status invalid
+                const status = columns[task.status] ? task.status : 'backlog';
+                columns[status].push(task);
+            });
+
+            // Render cards
+            Object.keys(columns).forEach(status => {
+                const container = document.getElementById(`tasks-${status}`);
+                document.getElementById(`count-${status}`).innerText = columns[status].length;
+
+                columns[status].forEach(task => {
+                    const card = document.createElement('div');
+                    card.className = 'task-card';
+                    card.innerHTML = `
+                        <span class="task-title">${escapeHtml(task.title)}</span>
+                        <div class="task-desc">${escapeHtml(task.description || '')}</div>
+                        <div class="task-meta">🆔 ${task.id}</div>
+                    `;
+                    container.appendChild(card);
+                });
+            });
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
 </body>
 </html>
