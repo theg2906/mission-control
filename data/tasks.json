@@ -127,7 +127,7 @@
     "id": "task_007",
     "title": "Henry test task",
     "description": "Kazuha is lovely",
-    "status": "backlog",
+    "status": "in_progress",
     "subtasks": [],
     "assignee": "agent",
     "priority": "medium",
